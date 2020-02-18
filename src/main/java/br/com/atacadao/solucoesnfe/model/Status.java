@@ -22,9 +22,7 @@ public class Status implements Serializable{
 	private String procedimento;
 	
 	@Enumerated(EnumType.ORDINAL)
-	private TipoDocumento tipoDocumento;	
-	
-	
+	private TipoDocumento tipoDocumento;		
 	
 	
 	public Long getId_status() {
