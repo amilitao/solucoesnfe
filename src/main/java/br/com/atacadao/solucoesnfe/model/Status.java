@@ -26,6 +26,7 @@ public class Status implements Serializable{
 	
 	
 	
+	
 	public Long getId_status() {
 		return id_status;
 	}
