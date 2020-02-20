@@ -9,7 +9,7 @@
 
 	<div class="w3-container" style="width: 70%">
 
-		<form action="<c:url value="/erros/procura"/>" class="w3-container">
+		<form action="<c:url value="/buscador/busca-status"/>" class="w3-container">
 			<div class="w3-row w3-margin w3-center">
 				<div class="w3-bar">
 
@@ -71,25 +71,7 @@
 				</ul>
 			</div>
 
-			<div id="id${status.id_status}" class="w3-modal">
-				<div class="w3-modal-content w3-animate-top w3-card-4">
-					<header class="w3-container w3-green">
-						<span
-							onclick="document.getElementById('id${status.id_status}').style.display='none'"
-							class="w3-button w3-display-topright">&times;</span>
-						<h4>Alteração de procedimento - Erro status ${status.codigo}</h4>
-					</header>
-					<div class="w3-container">
-						<p>
-							<textarea id="proc" rows="10" cols="96"> ${status.procedimento}
-						</textarea>
-						</p>
-					</div>
-					<footer class="w3-container w3-border-top w3-center">
-						<button class="w3-button w3-green w3-margin">Salvar</button>
-					</footer>
-				</div>
-			</div>
+			
 
 		</c:forEach>
 

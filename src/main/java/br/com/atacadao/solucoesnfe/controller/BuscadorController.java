@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.atacadao.solucoesnfe.model.Status;
 import br.com.atacadao.solucoesnfe.model.dao.StatusDao;
 
 @Controller
-@RequestMapping("/erros")
+@RequestMapping("/buscador")
 public class BuscadorController {
 	
 	@Autowired
@@ -24,7 +23,7 @@ public class BuscadorController {
 	
 	}
 	
-	@RequestMapping("/procura") 
+	@RequestMapping("/busca-status") 
 	public ModelAndView pesquisa(String codigo) {
 		
 		ModelAndView mav = new ModelAndView("buscador/busca-erro");		

@@ -1,9 +1,10 @@
-<div class="w3-bar w3-top w3-large w3-text-white"
-	style="background: #293949" style="z-index: 4">
-	<div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-		<span class="w3-bar-item w3-margin-left w3-margin-right w3-theme-d4 w3-green">
-			<i class="fa fa-file-excel-o"></i> Erros NF-e
-		</span>		
-	</div>
-
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar" style="background: #293949" style="z-index: 4">
+    <a href="/solucoesnfe" class="w3-bar-item w3-button w3-green"><i class="fa fa-file-excel-o"></i> Erros NF-e</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small w3-text-white">  
+      <a href="/solucoesnfe/status/form" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ADICIONAR ERRO</a>
+        
+    </div>  
+  </div>
 </div>
