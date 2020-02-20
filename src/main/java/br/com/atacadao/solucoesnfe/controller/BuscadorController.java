@@ -28,8 +28,9 @@ public class BuscadorController {
 	public ModelAndView pesquisa(String codigo) {
 		
 		ModelAndView mav = new ModelAndView("buscador/busca-erro");		
-		Status status = statusDao.listByCode(codigo);				
-		mav.addObject("status", status);
+						
+		mav.addObject("listaDeStatus", statusDao.listByCode(codigo));
+		mav.addObject("codigo", codigo);
 		
 		return mav;
 	}

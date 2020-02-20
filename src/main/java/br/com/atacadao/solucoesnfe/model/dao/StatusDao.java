@@ -19,9 +19,9 @@ public class StatusDao {
 				Status.class).getResultList();
 	}
 
-	public Status listByCode(String codigo) {
+	public List<Status> listByCode(String codigo) {
 		return manager.createQuery("select distinct(s) from Status s where s.codigo = :codigo ",
-				Status.class).setParameter("codigo", codigo ).getSingleResult();
+				Status.class).setParameter("codigo", codigo ).getResultList();
 	}
 
 }
