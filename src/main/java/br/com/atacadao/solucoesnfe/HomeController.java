@@ -9,7 +9,7 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public ModelAndView index() {			
-		return new ModelAndView("redirect:/buscador/");
+		return new ModelAndView("redirect:/erros/");
 	}
 
 }

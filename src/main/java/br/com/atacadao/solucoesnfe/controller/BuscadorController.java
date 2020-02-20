@@ -1,6 +1,5 @@
 package br.com.atacadao.solucoesnfe.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,7 @@ import br.com.atacadao.solucoesnfe.model.Status;
 import br.com.atacadao.solucoesnfe.model.dao.StatusDao;
 
 @Controller
-@RequestMapping("/buscador")
+@RequestMapping("/erros")
 public class BuscadorController {
 	
 	@Autowired
@@ -20,17 +19,17 @@ public class BuscadorController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView busca() {		
-		ModelAndView mav = new ModelAndView("buscador/busca-erro");
-		mav.addObject("listaDeStatus", statusDao.list());
+		ModelAndView mav = new ModelAndView("buscador/busca-erro");		
 		return mav;
 	
 	}
 	
-	public ModelAndView pesquisa() {
+	@RequestMapping("/procura") 
+	public ModelAndView pesquisa(String codigo) {
 		
-		ModelAndView mav = new ModelAndView("buscador/busca-erro");	
-		List<Status> listaDeStatus = statusDao.list();		
-		mav.addObject("listaDeStatus", listaDeStatus);
+		ModelAndView mav = new ModelAndView("buscador/busca-erro");		
+		Status status = statusDao.listByCode(codigo);				
+		mav.addObject("status", status);
 		
 		return mav;
 	}
