@@ -20,7 +20,8 @@ public class BuscadorController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView busca() {		
-		ModelAndView mav = new ModelAndView("buscador/busca-erro");		
+		ModelAndView mav = new ModelAndView("buscador/busca-erro");
+		mav.addObject("listaDeStatus", statusDao.list());
 		return mav;
 	
 	}

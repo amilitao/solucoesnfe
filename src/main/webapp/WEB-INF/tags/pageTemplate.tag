@@ -10,7 +10,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Relatórios Diarios</title>
+<title>Erros NF-e</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value='/resources/css/w3.css'/>">
@@ -34,7 +34,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 <body class="w3-light-gray">
 	<%@include file="/WEB-INF/header.jsp"%>		
-	<div class="w3-main"  style="margin-top: 43px;">
+	<div class="w3-main" style="margin-left: 20%; margin-top: 43px;">
 		<jsp:doBody />
 	</div>
 	<%@include file="/WEB-INF/footer.jsp"%>	
