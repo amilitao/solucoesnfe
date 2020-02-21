@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Status implements Serializable{
 
@@ -18,9 +20,11 @@ public class Status implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_status;
+	@NotBlank(message="Este campo não pode ser vazio")
 	private String codigo;
+	@NotBlank(message="Este campo não pode ser vazio")
 	private String descricao;
-	@Lob
+	@Lob	
 	private String ocorrencia;
 	@Lob
 	private String procedimento;
