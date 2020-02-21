@@ -29,9 +29,9 @@
 	<jsp:body>	
 	
 	<c:if test="${not empty sucesso}">
-			<div id="mensagem" title="Mensagem" class="w3-text-green">
+			<div id="mensagem" title="Mensagem">
 				<p>
-					${sucesso}
+					<i class="fa fa-check-circle w3-text-green"></i> ${sucesso}
 				</p>
 			</div>
 	</c:if>		
