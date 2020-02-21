@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import br.com.atacadao.solucoesnfe.model.dao.StatusDao;
 
 
 @Controller
+@Transactional
 @RequestMapping("/status")
 public class StatusController {
 	
@@ -43,14 +45,16 @@ public class StatusController {
 
 		if (status.getId_status() == null) {
 			statusDao.save(status);
-			redirectAttributes.addFlashAttribute("sucesso", "Status cadastrado com sucesso");
+			redirectAttributes.addFlashAttribute("sucesso", "Status código " 
+			+ status.getCodigo() + " cadastrado com sucesso!");
 		} else {
 			
 			statusDao.update(status);
-			redirectAttributes.addFlashAttribute("sucesso", "Status atualizado com sucesso");
+			redirectAttributes.addFlashAttribute("sucesso", "Status código " 
+			+ status.getCodigo() + " atualizado com sucesso!");
 		}
 		
-		return new ModelAndView("redirect:/status");
+		return new ModelAndView("redirect:/buscador");
 	}
 	
 	@RequestMapping("/editar/{id}")

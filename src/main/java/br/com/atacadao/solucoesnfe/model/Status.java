@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Status implements Serializable{
@@ -19,6 +20,9 @@ public class Status implements Serializable{
 	private Long id_status;
 	private String codigo;
 	private String descricao;
+	@Lob
+	private String ocorrencia;
+	@Lob
 	private String procedimento;
 	
 	@Enumerated(EnumType.ORDINAL)
@@ -42,6 +46,13 @@ public class Status implements Serializable{
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}	
+	
+	public String getOcorrencia() {
+		return ocorrencia;
+	}
+	public void setOcorrencia(String ocorrencia) {
+		this.ocorrencia = ocorrencia;
 	}
 	public String getProcedimento() {
 		return procedimento;

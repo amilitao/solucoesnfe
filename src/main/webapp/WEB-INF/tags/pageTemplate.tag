@@ -38,6 +38,8 @@ html, body, h1, h2, h3, h4, h5 {
 		<jsp:doBody />
 	</div>
 	<%@include file="/WEB-INF/footer.jsp"%>	
+	
+	<jsp:invoke fragment="extraScripts"/>
 </body>
 
 

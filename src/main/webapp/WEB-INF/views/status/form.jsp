@@ -38,8 +38,13 @@
 					<form:errors path="descricao" />
 				</p>
 				<p>
+					<label for="ocorrencia"><b>Ocorrência</b></label>
+					<form:textarea path="ocorrencia" rows="4" cols="30" class="w3-input w3-border" style="overflow-y:scroll"/>
+					<form:errors path="ocorrencia" />
+				</p>
+				<p>
 					<label for="procedimento"><b>Procedimento</b></label>
-					<form:textarea path="procedimento" rows="5" cols="30" class="w3-input w3-border" />
+					<form:textarea path="procedimento" rows="5" cols="30" class="w3-input w3-border" style="overflow-y:scroll" />
 					<form:errors path="procedimento" />
 				</p>
 				<p>
