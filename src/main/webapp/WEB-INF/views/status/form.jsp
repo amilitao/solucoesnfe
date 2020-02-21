@@ -11,7 +11,7 @@
 
 		<div class="w3-card-4 w3-white" >
 			<div class="w3-container w3-green">
-				<h4>Cadastro de Status</h4>
+				<h5><i class="fa fa-plus-square"></i> Cadastro de Status</h5>
 			</div>
 			<form:form class= "w3-container" action="${spring:mvcUrl('SC#save').build()}" method="post"
 				commandName="status">
