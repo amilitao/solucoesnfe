@@ -32,7 +32,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 </head>
 
-<body class="w3-light-gray">
+<body style="background-color:#f0ead6">
 	<%@include file="/WEB-INF/header.jsp"%>		
 	<div class="w3-main">
 		<jsp:doBody />
