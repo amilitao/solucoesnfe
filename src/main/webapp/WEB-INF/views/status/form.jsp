@@ -49,8 +49,10 @@
 				</p>
 				<p>
 					<button class="w3-btn w3-green">Salvar</button>
+					<a href="/solucoesnfe" class="w3-button w3-right">Voltar</a>
 				</p>
-			</form:form>
+			</form:form>			
+			
 		</div>
 
 	</div>
