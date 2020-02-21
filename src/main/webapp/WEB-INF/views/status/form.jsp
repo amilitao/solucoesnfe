@@ -5,69 +5,49 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 
-<customTags:pageTemplate title="salvar-status">
+<customTags:pageTemplate title="cadastro de status">
 
-	<div class="w3-container w3-display-middle" style="width:50%">
+	<div class="w3-container w3-display-middle" style="width: 50%">
 
-		<form action="/action_page.php"
-			class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-			<h2 class="w3-center">Contact Us</h2>
-
-			<div class="w3-row w3-section">
-				<div class="w3-col" style="width: 50px">
-					<i class="w3-xxlarge fa fa-user"></i>
-				</div>
-				<div class="w3-rest">
-					<input class="w3-input w3-border" name="first" type="text"
-						placeholder="First Name">
-				</div>
+		<div class="w3-card-4">
+			<div class="w3-container w3-green">
+				<h4>Cadastro de Status</h4>
 			</div>
+			<form:form class= "w3-container" action="${spring:mvcUrl('SC#save').build()}" method="post"
+				commandName="status">
+				
+				<form:hidden path="id_status"/>
+				
+				<p>
+					<label for="tipoDocumento"><b>Tipo do documento</b></label>
+					<form:select class="w3-select" path="tipoDocumento" >	
+					<form:option value="-1" label="--- Selecione ---" />						
+					<form:options items="${tiposDeDocumento}" />
+					</form:select>							
+					<form:errors path="tipoDocumento" />
+				</p>
+				
+				<p>
+					<label for="codigo"><b>Código</b></label> 
+					<form:input path="codigo" class="w3-input w3-border" />
+					<form:errors path="codigo" />
+				</p>
+				<p>
+					<label for="descricao"><b>Descrição</b></label> 
+					<form:input path="descricao" class="w3-input w3-border" />
+					<form:errors path="descricao" />
+				</p>
+				<p>
+					<label for="procedimento"><b>Procedimento</b></label>
+					<form:textarea path="procedimento" rows="5" cols="30" class="w3-input w3-border" />
+					<form:errors path="procedimento" />
+				</p>
+				<p>
+					<button class="w3-btn w3-green">Salvar</button>
+				</p>
+			</form:form>
+		</div>
 
-			<div class="w3-row w3-section">
-				<div class="w3-col" style="width: 50px">
-					<i class="w3-xxlarge fa fa-user"></i>
-				</div>
-				<div class="w3-rest">
-					<input class="w3-input w3-border" name="last" type="text"
-						placeholder="Last Name">
-				</div>
-			</div>
-
-			<div class="w3-row w3-section">
-				<div class="w3-col" style="width: 50px">
-					<i class="w3-xxlarge fa fa-envelope-o"></i>
-				</div>
-				<div class="w3-rest">
-					<input class="w3-input w3-border" name="email" type="text"
-						placeholder="Email">
-				</div>
-			</div>
-
-			<div class="w3-row w3-section">
-				<div class="w3-col" style="width: 50px">
-					<i class="w3-xxlarge fa fa-phone"></i>
-				</div>
-				<div class="w3-rest">
-					<input class="w3-input w3-border" name="phone" type="text"
-						placeholder="Phone">
-				</div>
-			</div>
-
-			<div class="w3-row w3-section">
-				<div class="w3-col" style="width: 50px">
-					<i class="w3-xxlarge fa fa-pencil"></i>
-				</div>
-				<div class="w3-rest">
-					<input class="w3-input w3-border" name="message" type="text"
-						placeholder="Message">
-				</div>
-			</div>
-
-			<p class="w3-center">
-				<button class="w3-button w3-section w3-blue w3-ripple">
-					Send</button>
-			</p>
-		</form>
 	</div>
 
 </customTags:pageTemplate>

@@ -5,17 +5,16 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 
-<customTags:pageTemplate title="buscador">
+<customTags:pageTemplate title="buscador de status">
 
-	<div class="w3-container" style="width: 70%">
+	<div class="w3-container w3-display-middle" style="width: 50%">
 
 		<form action="<c:url value="/buscador/busca-status"/>" class="w3-container">
 			<div class="w3-row w3-margin w3-center">
 				<div class="w3-bar">
-
-					<input class="w3-input w3-border w3-bar-item" type="text"
-						name="codigo" value="${codigo}"
-						placeholder="Digite o codigo do erro" required>
+					<input class="w3-input w3-border w3-border-green w3-bar-item" type="text"
+						name="codigo" value="${codigo}" style="width:250px"
+						placeholder="Digite o número do status" required>
 
 					<button class="w3-button w3-green w3-bar-item w3-margin-left">
 						<i class="fa fa-search"></i> Pesquisar
@@ -45,7 +44,13 @@
 					<li>
 						<div class="w3-border-bottom">
 							<p>
-								<b>Erro status:</b> ${status.codigo}
+								<b>Tipo de documento:</b> ${status.tipoDocumento}
+							</p>
+						</div>
+					
+						<div class="w3-border-bottom">
+							<p>
+								<b>Status:</b> ${status.codigo}
 							</p>
 						</div>
 
@@ -61,21 +66,14 @@
 							<div class="container w3-border w3-margin-bottom w3-padding">
 								<p>${status.procedimento}</p>
 							</div>
-
-							<button
-								onclick="document.getElementById('id${status.id_status}').style.display='block'"
-								class="w3-button w3-green">Editar</button>
-
+							
+							 <a href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}" class="w3-button w3-green" title="editar">Editar</a>
+							
 						</div>
 					</li>
 				</ul>
 			</div>
-
-			
-
 		</c:forEach>
-
-
 	</div>
 
 
