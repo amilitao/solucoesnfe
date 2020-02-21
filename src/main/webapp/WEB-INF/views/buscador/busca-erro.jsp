@@ -37,11 +37,11 @@
 	</c:if>		
 
 
-	<div class="w3-container w3-display-middle" style="width: 50%">
+	<div class="w3-display-middle" style="width: 50%">
 
 		<form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
-			<div class="w3-row w3-margin w3-center">
+			<div class="w3-row w3-center">
 				<div class="w3-bar">
 					<input class="w3-input w3-border w3-border-green w3-bar-item"
 							type="text" name="codigo" value="${codigo}" style="width: 250px"
@@ -58,7 +58,7 @@
 		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
 
 			<div class="w3-container w3-center w3-margin-top">
-				<i class="fa fa-search" style="font-size: 48px"></i>
+				<i class="fa fa-search" style="font-size: 32px"></i>
 				<h5 class="w3-padding">
 					Nenhum resultado correspondente à busca
 				</h5>
