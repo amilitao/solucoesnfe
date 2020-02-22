@@ -1,4 +1,4 @@
-<div class="w3-top">
+<header class="w3-top">
   <div class="w3-bar" id="myNavbar" style="background: #293949" style="z-index: 4">
     <a href="/solucoesnfe" class="w3-bar-item w3-button w3-green"><i class="fa fa-file-excel-o"></i> Status NF-e</a>
     <!-- Right-sided navbar links -->
@@ -7,4 +7,4 @@
         
     </div>  
   </div>
-</div>
+</header>

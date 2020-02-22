@@ -1,4 +1,4 @@
-<div class="w3-container w3-display-bottommiddle w3-opacity" >	
-		@Produção / Atacadão S.A	
-</div>
+<footer class="w3-container w3-center w3-opacity" style="position: fixed; bottom: 0; left: 40%" >	
+		@Produção / Atacadão S.A
+</footer>
 

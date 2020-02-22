@@ -37,7 +37,7 @@
 	</c:if>		
 
 
-	<div class="w3-display-middle" style="width: 50%">
+	<div class="w3-container" style="margin-left: 20%; margin-top: 50px; width: 60%">
 
 		<form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
@@ -58,9 +58,9 @@
 		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
 
 			<div class="w3-container w3-center w3-margin-top">
-				<i class="fa fa-search" style="font-size: 32px"></i>
+				<h1 class="w3-jumbo">:(</h1>
 				<h5 class="w3-padding">
-					Nenhum resultado correspondente à busca
+					Nenhum resultado encontrado
 				</h5>
 			</div>
 		</c:if>
@@ -109,7 +109,7 @@
 							</div>
 							
 							 <a
-									href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}"
+								href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}"
 									class="w3-button w3-green" title="editar">Editar</a>
 							
 						</div>
