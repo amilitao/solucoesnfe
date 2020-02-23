@@ -33,13 +33,14 @@ html, body, h1, h2, h3, h4, h5 {
 
 </head>
 
-<body style="background-color:#f0ead6">
-	<%@include file="/WEB-INF/header.jsp"%>		
-	<div class="w3-main">
+<body style="background-color:#F0EDE5">	
+	<%@include file="/WEB-INF/header.jsp"%>
+	<%@include file="/WEB-INF/sidebar.jsp"%>	
+	<div class="w3-main" style="margin-left: 70%; margin-right: 10px; margin-top: 50px">
 		<jsp:doBody />
-	</div>
+	</div>	
 	<%@include file="/WEB-INF/footer.jsp"%>	
-	
+		
 	<jsp:invoke fragment="extraScripts"/>
 </body>
 
