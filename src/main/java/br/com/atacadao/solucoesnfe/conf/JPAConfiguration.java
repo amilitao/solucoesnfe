@@ -47,8 +47,8 @@ public class JPAConfiguration {
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");		
 		dataSource.setUrl("jdbc:mysql://localhost/db_solucoesnfe");
 		
-		dataSource.setUsername("root");
-		dataSource.setPassword("admin");			
+		dataSource.setUsername("amilitao");
+		dataSource.setPassword("#m24m07c77$");			
 		
 		return dataSource;
 	}
@@ -58,7 +58,7 @@ public class JPAConfiguration {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-		properties.setProperty("hibernate.show_sql", "true");
+		properties.setProperty("hibernate.show_sql", "false");
 		return properties;
 	}
 }

@@ -7,7 +7,7 @@
 
 <customTags:pageTemplate title="buscador de status">
 
-<jsp:attribute name="extraScripts">
+	<jsp:attribute name="extraScripts">
 <script>
 	$(function() {
 		$("#mensagem").dialog({
@@ -37,7 +37,8 @@
 	</c:if>		
 
 
-	<div class="w3-container" style="margin-left: 20%; margin-top: 50px; width: 60%">
+	<div class="w3-container"
+			style="margin-left: 20%; margin-top: 50px; width: 60%">
 
 		<form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
@@ -103,21 +104,38 @@
 						
 						<div class="w3-margin-top">
 							
-							<label for="proc"><b>Procedimento:</b></label>							
-							<div class="container w3-border w3-margin-bottom w3-padding">
+							<label for="proc"><b>Procedimento:</b></label>	
+							<a href="#" onclick="document.getElementById('id${status.id_status}').style.display='block'">
+							<i class="fa fa-search-plus w3-right" style="font-size:20px"></i> 
+							</a>						
+							<div class="container w3-border w3-margin-bottom w3-padding" style="height:190px">
 								<p>${status.procedimento}</p>
-							</div>
-							
-							 <a
-								href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}"
+							</div>							
+							 <a href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}"
 									class="w3-button w3-green" title="editar">Editar</a>
 							
 						</div>
 					</li>
 				</ul>
 			</div>
+			
+			<div id="id${status.id_status}" class="w3-modal">
+				<div class="w3-modal-content w3-animate-top w3-card-4">
+					<header class="w3-container w3-green"> 
+       				<span onclick="document.getElementById('id${status.id_status}').style.display='none'"
+					class="w3-button w3-display-topright">&times;</span>
+     			    <h5>Procedimento</h5>
+    	    	    </header>
+    	   				  <div class="w3-container">
+								<p>${status.procedimento}</p>
+						  </div>
+				</div>
+			</div>
+			
+			
 		</c:forEach>
 	</div>
+	
 
 </jsp:body>
 
