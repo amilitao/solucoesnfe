@@ -7,7 +7,7 @@
 
 <customTags:pageTemplate title="buscador de status">
 
-	<jsp:attribute name="extraScripts">
+<jsp:attribute name="extraScripts">
 <script>
 	$(function() {
 		$("#mensagem").dialog({
@@ -36,8 +36,18 @@
 	</div>
 </c:if>	
 
-<div class="w3-container">
-  
+<header class="w3-top" style="background:#d8dddf;">
+  <div class="w3-bar" style="background: #293949; width:50%" >
+    <a href="/solucoesnfe" class="w3-bar-item w3-button w3-green"><i class="fa fa-file-excel-o"></i> Status NF-e</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-hide-small w3-text-white w3-right">  
+      <a href="/solucoesnfe/status/form" class="w3-bar-item w3-button"><i class="fa fa-plus-square"></i> NOVO STATUS</a>
+    </div>  
+  </div>
+</header>
+
+<div class="w3-container">   
+
  <form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
 			<div class="w3-row w3-center">
