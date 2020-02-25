@@ -7,28 +7,15 @@
 
 <customTags:pageTemplate title="cadastro de status">
 
-	<header class="w3-top" style="background: #d8dddf;">
-		<div class="w3-bar" style="background: #293949; width: 50%">
-			<a href="/solucoesnfe" class="w3-bar-item w3-button w3-green"><i
-				class="fa fa-file-excel-o"></i> Status NF-e</a>
-			<!-- Right-sided navbar links -->
-			<div class="w3-hide-small w3-text-white w3-right">
-				<a href="/solucoesnfe/status/form" class="w3-bar-item w3-button"><i
-					class="fa fa-plus-square"></i> NOVO STATUS</a>
-			</div>
-		</div>
-	</header>
-
-
 	<div class="w3-container">
 
-		<div class="w3-container">
+		<div class="w3-panel w3-green">
 			<h5>
 				<i class="fa fa-plus-square"></i> Cadastro de Status
 			</h5>
 		</div>
-		<form:form class="w3-container"
-			action="${spring:mvcUrl('SC#save').build()}" method="post"
+		
+		<form:form action="${spring:mvcUrl('SC#save').build()}" method="post"
 			commandName="status">
 
 			<form:hidden path="id_status" />
