@@ -35,9 +35,6 @@
 				</p>
 			</div>
 	</c:if>		
-
-
-	<div class="w3-container" >
 	
 		<c:import url="campopesquisa.jsp" />
 
@@ -75,11 +72,8 @@
 						
 						<div class="w3-margin-top">
 							
-							<label for="proc"><b>Procedimento:</b></label>	
-							<a href="#" onclick="document.getElementById('id${status.id_status}').style.display='block'">
-							<i class="fa fa-search-plus w3-right" style="font-size:20px"></i> 
-							</a>						
-							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white" style="height:190px;">
+							<label for="proc"><b>Procedimento:</b></label>														
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
 								<p>${status.procedimento}</p>
 							</div>								
 						</div>	
@@ -90,24 +84,9 @@
 					
 					</li>
 				</ul>
-			</div>
-			
-			<div id="id${status.id_status}" class="w3-modal">
-				<div class="w3-modal-content w3-animate-top w3-card-4">
-					<header class="w3-container w3-green"> 
-       				<span onclick="document.getElementById('id${status.id_status}').style.display='none'"
-					class="w3-button w3-display-topright">&times;</span>
-     			    <h5>Procedimento</h5>
-    	    	    </header>
-    	   				  <div class="w3-container">
-								<p>${status.procedimento}</p>
-						  </div>
-				</div>
-			</div>
-			
+			</div>			
 			
 		</c:forEach>
-	</div>
 	
 
 </jsp:body>

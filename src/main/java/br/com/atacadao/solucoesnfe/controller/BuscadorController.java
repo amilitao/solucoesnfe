@@ -18,7 +18,7 @@ public class BuscadorController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView busca() {		
-		ModelAndView mav = new ModelAndView("buscador/busca-erro");		
+		ModelAndView mav = new ModelAndView("buscador/busca-status");		
 		return mav;
 	
 	}
@@ -26,7 +26,7 @@ public class BuscadorController {
 	@RequestMapping("/busca-status") 
 	public ModelAndView pesquisa(String codigo) {
 		
-		ModelAndView mav = new ModelAndView("buscador/busca-erro");		
+		ModelAndView mav = new ModelAndView("buscador/busca-status");		
 						
 		mav.addObject("listaDeStatus", statusDao.listByCode(codigo));
 		mav.addObject("codigo", codigo);
