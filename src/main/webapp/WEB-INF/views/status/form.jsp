@@ -7,6 +7,16 @@
 
 <customTags:pageTemplate title="cadastro de status">
 
+<jsp:attribute name="extraScripts">
+
+		<script>
+			CKEDITOR.replace('txtArtigo');
+		</script>
+
+</jsp:attribute>
+
+<jsp:body>
+
 	<div class="w3-container">
 
 		<div class="w3-panel w3-green">
@@ -16,14 +26,14 @@
 		</div>
 		
 		<form:form action="${spring:mvcUrl('SC#save').build()}" method="post"
-			commandName="status">
+				commandName="status">
 
 			<form:hidden path="id_status" />
 
 			<p>
 				<label for="tipoDocumento"><b>Tipo do documento</b></label>
 				<form:select class="w3-select w3-border w3-white"
-					path="tipoDocumento">
+						path="tipoDocumento">
 					<form:option value="-1" label="--- Selecione ---" />
 					<form:options items="${tiposDeDocumento}" />
 				</form:select>
@@ -43,14 +53,14 @@
 			<p>
 				<label for="ocorrencia"><b>Ocorrência</b></label>
 				<form:textarea path="ocorrencia" rows="2" cols="30"
-					class="w3-input w3-border w3-white" style="overflow-y:scroll;" />
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" />
 				<form:errors path="ocorrencia" />
 			</p>
 
 			<p>
 				<label for="procedimento"><b>Procedimento</b></label>
 				<form:textarea path="procedimento" rows="7" cols="30"
-					class="w3-input w3-border w3-white" style="overflow-y:scroll;" />
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="txtArtigo"/>
 				<form:errors path="procedimento" />
 			</p>
 
@@ -63,5 +73,6 @@
 
 	</div>
 
+</jsp:body>
 
 </customTags:pageTemplate>

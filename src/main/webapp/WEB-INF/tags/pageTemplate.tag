@@ -23,6 +23,8 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src="<c:url value='/resources/js/w3.js'/>"></script>
+<script src="//cdn.ckeditor.com/4.13.1/basic/ckeditor.js"></script>
+
 
 
 <style>
