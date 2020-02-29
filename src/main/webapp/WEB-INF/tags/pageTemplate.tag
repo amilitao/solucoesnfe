@@ -23,6 +23,8 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src="<c:url value='/resources/js/w3.js'/>"></script>
+<script src="//cdn.ckeditor.com/4.13.1/basic/ckeditor.js"></script>
+
 
 
 <style>
@@ -33,9 +35,9 @@ html, body, h1, h2, h3, h4, h5 {
 
 </head>
 
-<body style="background-color:#f0ead6">
+<body class="w3-light-gray">
 	<%@include file="/WEB-INF/header.jsp"%>		
-	<div class="w3-main">
+	<div class="w3-content" style="margin-top: 50px;max-width:800px">
 		<jsp:doBody />
 	</div>
 	<%@include file="/WEB-INF/footer.jsp"%>	
