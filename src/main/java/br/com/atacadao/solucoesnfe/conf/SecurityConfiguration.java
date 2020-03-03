@@ -27,9 +27,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()						
-						.antMatchers("/status/form").hasAuthority("ADMIN")
+		http.authorizeRequests()			
+						.antMatchers("/").permitAll()
 						.antMatchers("/buscador/").permitAll()
+						.antMatchers("/buscador/busca-status").permitAll()
+						.antMatchers("/buscador/acesso-restrito").hasAuthority("ADMIN")
+						.antMatchers("/status/form").hasAuthority("ADMIN")
 						.antMatchers("/resources/css/**").permitAll()		
 						.anyRequest().authenticated()
 						.and()

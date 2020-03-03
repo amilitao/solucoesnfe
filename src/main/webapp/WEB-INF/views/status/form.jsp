@@ -17,9 +17,9 @@
 
 <jsp:body>
 
-	<div class="w3-container">
+	<div class="w3-container" style="width:75%">
 
-		<div class="w3-panel w3-green">
+		<div class="w3-panel w3-border w3-border-green">
 			<h5>
 				<i class="fa fa-plus-square"></i> Cadastro de Status
 			</h5>
@@ -59,14 +59,14 @@
 
 			<p>
 				<label for="procedimento"><b>Procedimento</b></label>
-				<form:textarea path="procedimento" rows="7" cols="30"
+				<form:textarea path="procedimento" rows="4" cols="30"
 						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="txtArtigo"/>
 				<form:errors path="procedimento" />
 			</p>
 
 			<p>
 				<button class="w3-btn w3-green">Salvar</button>
-				<a href="/solucoesnfe" class="w3-button w3-dark-grey w3-right">Voltar</a>
+				<a href="/solucoesnfe/buscador/admin" class="w3-button w3-dark-grey w3-right">Voltar</a>
 			</p>
 
 		</form:form>

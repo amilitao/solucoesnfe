@@ -23,12 +23,13 @@ html, body, h1, h2, h3, h4, h5 {
 
 <body>
 
-	<div class="w3-display-middle w3-round-large w3-border"
+	<div class="w3-display-middle w3-round-large"
 		style="width: 380px">
 		<div class="w3-container w3-padding-48 w3-center" style="height:150px">			
 			<h3>STATUS NF-e</h3>
 			
 		</div>
+		 
 		<div
 			class="w3-container w3-padding-large w3-white">			
 			<div class="w3-section">
@@ -39,7 +40,7 @@ html, body, h1, h2, h3, h4, h5 {
 					<label><b>Senha</b> <input
 						class="w3-input w3-border w3-margin-bottom" type='password'
 						name='password' /> </label>
-					<button class="w3-button w3-block w3-grey w3-section w3-padding"
+					<button class="w3-button w3-block w3-green w3-section w3-padding"
 						name="submit" type="submit">Login</button>
 
 				</form:form>

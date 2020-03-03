@@ -21,7 +21,14 @@ public class BuscadorController {
 		ModelAndView mav = new ModelAndView("buscador/busca-status");		
 		return mav;
 	
-	}
+	}	
+	
+	@RequestMapping("/acesso-restrito")
+	public ModelAndView acessoRestrito() {		
+		return new ModelAndView("redirect:/buscador/");
+	
+	}	
+	
 	
 	@RequestMapping("/busca-status") 
 	public ModelAndView pesquisa(String codigo) {
@@ -33,6 +40,8 @@ public class BuscadorController {
 		
 		return mav;
 	}
+	
+	
 	
 	
 }

@@ -36,7 +36,11 @@
 					<i class="fa fa-check-circle w3-text-green"></i> ${sucesso}
 				</p>
 			</div>
-	</c:if>				
+	</c:if>		
+	
+	<div class="w3-container" style="width:75%">	
+	
+	<div class="w3-panel">
 	
 	<form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
@@ -53,6 +57,8 @@
 
 			</div>
 		</form>
+		
+		</div>	
 
 		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
 
@@ -114,6 +120,8 @@
 			
 		</c:forEach>
 	
+	</div>
+
 
 </jsp:body>
 
