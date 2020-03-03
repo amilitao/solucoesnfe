@@ -3,6 +3,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 
 
 
@@ -104,15 +106,35 @@
 						
 						<div class="w3-margin-top">
 							
-							<label for="proc"><b>Procedimento:</b></label>														
+							<label for="proc"><b>Procedimento Filial:</b></label>														
 							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
-								<p>${status.procedimento}</p>
+								<p>${status.procedimentoFilial}</p>
+							</div>								
+						</div>
+						
+						<div class="w3-margin-top">
+							
+							<label for="proc"><b>Procedimento Producao:</b></label>														
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
+								<p>${status.procedimentoProducao}</p>
 							</div>								
 						</div>	
+						
+						<div class="w3-margin-top">
+							
+							<label for="proc"><b>Procedimento Desenvol Comercial:</b></label>														
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
+								<p>${status.procedimentoDesenvolvimentoComercial}</p>
+							</div>								
+						</div>	
+						
+						
+						<sec:authorize access="isAuthenticated()">	
 						<p>				
 						 <a href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}"
 									class="w3-button w3-green" title="editar">Editar</a>
 						</p>
+						</sec:authorize>
 					
 					</li>
 				</ul>

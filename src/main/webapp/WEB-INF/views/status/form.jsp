@@ -10,7 +10,15 @@
 <jsp:attribute name="extraScripts">
 
 		<script>
-			CKEDITOR.replace('txtArtigo');
+			CKEDITOR.replace('procFilial');
+		</script>
+		
+		<script>
+			CKEDITOR.replace('procProducao');
+		</script>
+		
+		<script>
+			CKEDITOR.replace('procDesenvol');
 		</script>
 
 </jsp:attribute>
@@ -58,15 +66,29 @@
 			</p>
 
 			<p>
-				<label for="procedimento"><b>Procedimento</b></label>
-				<form:textarea path="procedimento" rows="4" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="txtArtigo"/>
-				<form:errors path="procedimento" />
+				<label for="procedimentoFilial"><b>Procedimento Filial</b></label>
+				<form:textarea path="procedimentoFilial" rows="4" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procFilial"/>
+				<form:errors path="procedimentoFilial" />
+			</p>
+			
+			<p>
+				<label for="procedimentoProducao"><b>Procedimento Producao</b></label>
+				<form:textarea path="procedimentoProducao" rows="4" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procProducao"/>
+				<form:errors path="procedimentoProducao" />
+			</p>
+			
+			<p>
+				<label for="procedimentoDesenvolvimentoComercial"><b>Procedimento Desenvol Comercial</b></label>
+				<form:textarea path="procedimentoDesenvolvimentoComercial" rows="4" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procDesenvol"/>
+				<form:errors path="procedimentoDesenvolvimentoComercial" />
 			</p>
 
 			<p>
 				<button class="w3-btn w3-green">Salvar</button>
-				<a href="/solucoesnfe/buscador/admin" class="w3-button w3-dark-grey w3-right">Voltar</a>
+				<a href="<c:url value="/buscador/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>
 			</p>
 
 		</form:form>

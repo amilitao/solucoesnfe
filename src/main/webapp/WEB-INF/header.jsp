@@ -10,7 +10,9 @@
 		
 		<sec:authorize access="!isAuthenticated()">
 			<a href="<c:url value="/buscador/acesso-restrito"/>" 
-			class="w3-bar-item w3-button w3-right w3-text-white">Acesso Restrito</a>
+			class="w3-bar-item w3-button w3-right w3-text-white w3-black">
+			<i class="fa fa-lock" style="font-size:24px"></i>
+			</a>
 		</sec:authorize>	
 		
 		<sec:authorize access="isAuthenticated()">
