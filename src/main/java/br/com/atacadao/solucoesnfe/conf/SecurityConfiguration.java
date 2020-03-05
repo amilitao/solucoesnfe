@@ -42,6 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 						.and()
 						.exceptionHandling()
 						.accessDeniedPage("/WEB-INF/views/errors/403.jsp");
+					
 	}
 	
 	@Bean
