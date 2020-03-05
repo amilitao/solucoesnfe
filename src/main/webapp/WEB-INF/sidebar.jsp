@@ -11,7 +11,7 @@
 
 
 		<a href="<c:url value="/buscador/" />"
-			class="w3-bar-item w3-button w3-padding w3-hover-green"> 
+			class="w3-bar-item w3-button w3-padding w3-hover-white w3-green"> 
 			<i class="fa fa-search"></i> Pesquisa de status
 		</a>
 		
