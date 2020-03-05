@@ -112,6 +112,7 @@
 							</div>								
 						</div>
 						
+						<sec:authorize access="hasAnyAuthority('ADMIN', 'DEVCOM')">	
 						<div class="w3-margin-top">
 							
 							<label for="proc"><b>Procedimento Producao:</b></label>														
@@ -119,7 +120,9 @@
 								<p>${status.procedimentoProducao}</p>
 							</div>								
 						</div>	
+						</sec:authorize>
 						
+						<sec:authorize access="hasAnyAuthority('ADMIN', 'DEVCOM')">	
 						<div class="w3-margin-top">
 							
 							<label for="proc"><b>Procedimento Desenvol Comercial:</b></label>														
@@ -127,7 +130,7 @@
 								<p>${status.procedimentoDesenvolvimentoComercial}</p>
 							</div>								
 						</div>	
-						
+						</sec:authorize>
 						
 						<sec:authorize access="isAuthenticated()">	
 						<p>				

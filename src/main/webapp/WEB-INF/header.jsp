@@ -4,7 +4,7 @@
 <header class="w3-bar w3-top w3-large">
 	<div class="w3-bar" id="myNavbar" style="background: #293949"
 		style="z-index: 4">
-		<div class="w3-bar-item w3-button w3-green"><i
+		<div class="w3-bar-item w3-green"><i
 			class="fa fa-file-excel-o"></i> Status NF-e
 		</div>	
 		
