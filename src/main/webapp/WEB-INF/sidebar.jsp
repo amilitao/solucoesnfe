@@ -15,7 +15,7 @@
 			<i class="fa fa-search"></i> Pesquisa de status
 		</a>
 		
-		<sec:authorize access="hasAuthority('PRODUCAO')">			
+		<sec:authorize access="hasAnyAuthority('PRODUCAO', 'DEVCOM')">			
 				<a href="/solucoesnfe/admin/status/form" class="w3-bar-item w3-button w3-padding w3-hover-green"><i
 					class="fa fa-plus-square"></i> Adicionar Status</a>	
 		</sec:authorize>	
