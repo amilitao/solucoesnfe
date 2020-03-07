@@ -21,26 +21,23 @@ html, body, h1, h2, h3, h4, h5 {
 
 </head>
 
-<body class="w3-gray">
+<body class="w3-light-gray">
 
-	<div class="w3-display-middle w3-round-large w3-card-4"
+	<div class="w3-display-middle w3-round-large w3-text-dark-gray"
 		style="width: 380px">
-		<div class="w3-container w3-padding-24 w3-green w3-center" style="height:80px">			
-			<h4>STATUS NF-e</h4>
-			
+		<div class="w3-container w3-padding-24 w3-center" style="height:180px">			
+				<i class="fa fa-user-circle" style="font-size:100px"></i>
+				<h3>Acesso Matriz</h3>		
 		</div>
 		 
-		<div
-			class="w3-container w3-padding-large w3-white" style="height:280px">			
+		<div class="w3-container w3-padding-large" style="height:280px">			
 			<div class="w3-section">
 				<form:form servletRelativeAction="/login">
-					<label><b>Usuario</b> <input
-						class="w3-input w3-border w3-border-green w3-margin-bottom" type='text'
-						name='username' value=''> </label>
-					<label><b>Senha</b> <input
-						class="w3-input w3-border w3-border-green w3-margin-bottom" type='password'
-						name='password' /> </label>
-					<button class="w3-button w3-block w3-green w3-section w3-padding"
+					<input class="w3-input w3-border w3-margin-bottom w3-card-4" type='text'
+						name='username' placeholder=" Login"> 
+					<input class="w3-input w3-border w3-margin-bottom w3-card-4" type='password'
+						name='password' placeholder=" Senha"/> 
+					<button class="w3-button w3-block w3-green w3-section w3-padding w3-card-4"
 						name="submit" type="submit">Entrar</button>
 
 				</form:form>

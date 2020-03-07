@@ -82,7 +82,7 @@
 				<form:errors path="procedimentoProducao" />
 			</p>
 			
-			<sec:authorize access="hasAuthority('DEVCOM')">	
+			<sec:authorize access="hasAnyAuthority('DEVCOM', 'ADMIN')">	
 			<p>
 				<label for="procedimentoDesenvolvimentoComercial"><b>Procedimento Desenvol Comercial</b></label>
 				<form:textarea path="procedimentoDesenvolvimentoComercial" rows="4" cols="30"
