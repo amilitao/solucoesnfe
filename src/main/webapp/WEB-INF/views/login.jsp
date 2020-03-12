@@ -12,10 +12,11 @@
 <link rel="stylesheet" href="<c:url value='/resources/css/w3.css'/>">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Baloo+2|Cairo&display=swap" rel="stylesheet">
 
 <style>
 html, body, h1, h2, h3, h4, h5 {
-	font-family: "Raleway", sans-serif
+	font-family: 'Cairo', sans-serif;
 }
 </style>
 
@@ -26,8 +27,8 @@ html, body, h1, h2, h3, h4, h5 {
 	<div class="w3-display-middle w3-round-large w3-text-dark-gray"
 		style="width: 380px">
 		<div class="w3-container w3-padding-24 w3-center" style="height:180px">			
-				<i class="fa fa-user-circle" style="font-size:100px"></i>
-				<h3>Acesso Matriz</h3>		
+				<i class="fa fa-user-circle" style="font-size:80px"></i>
+				<h3><b>Acesso Matriz</b></h3>		
 		</div>
 		 
 		<div class="w3-container w3-padding-large" style="height:280px">			

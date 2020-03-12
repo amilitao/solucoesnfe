@@ -11,7 +11,7 @@
 		<sec:authorize access="!isAuthenticated()">
 			<a href="<c:url value="/buscador/acesso-restrito"/>" 
 			class="w3-button w3-right w3-text-white w3-black w3-medium">
-			<i class="fa fa-lock" style="font-size:24px"></i> Acesso Matriz
+			<i class="fa fa-lock"></i> Acesso Matriz
 			</a>
 		</sec:authorize>	
 		
