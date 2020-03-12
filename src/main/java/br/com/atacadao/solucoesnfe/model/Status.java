@@ -2,6 +2,7 @@ package br.com.atacadao.solucoesnfe.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -27,7 +28,16 @@ public class Status implements Serializable{
 	@Lob	
 	private String ocorrencia;
 	@Lob
-	private String procedimento;
+	@Column(name = "procedimento_filial")
+	private String procedimentoFilial;
+	
+	@Lob
+	@Column(name = "procedimento_producao")
+	private String procedimentoProducao;
+	
+	@Lob
+	@Column(name = "procedimento_desenvolvimento_comercial")
+	private String procedimentoDesenvolvimentoComercial;
 	
 	@Enumerated(EnumType.ORDINAL)
 	private TipoDocumento tipoDocumento;		
@@ -57,12 +67,25 @@ public class Status implements Serializable{
 	}
 	public void setOcorrencia(String ocorrencia) {
 		this.ocorrencia = ocorrencia;
+	}	
+	
+	public String getProcedimentoFilial() {
+		return procedimentoFilial;
 	}
-	public String getProcedimento() {
-		return procedimento;
+	public void setProcedimentoFilial(String procedimentoFilial) {
+		this.procedimentoFilial = procedimentoFilial;
 	}
-	public void setProcedimento(String procedimento) {
-		this.procedimento = procedimento;
+	public String getProcedimentoProducao() {
+		return procedimentoProducao;
+	}
+	public void setProcedimentoProducao(String procedimentoProducao) {
+		this.procedimentoProducao = procedimentoProducao;
+	}
+	public String getProcedimentoDesenvolvimentoComercial() {
+		return procedimentoDesenvolvimentoComercial;
+	}
+	public void setProcedimentoDesenvolvimentoComercial(String procedimentoDesenvolvimentoComercial) {
+		this.procedimentoDesenvolvimentoComercial = procedimentoDesenvolvimentoComercial;
 	}
 	public TipoDocumento getTipoDocumento() {
 		return tipoDocumento;

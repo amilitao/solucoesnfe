@@ -7,6 +7,7 @@
 	<packaging>war</packaging>
 
 	<properties>
+
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,7 +69,29 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
+		<!-- Spring security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>4.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>4.0.2.RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -79,7 +102,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>4.1.7.RELEASE</version>
-		</dependency>	
+		</dependency>
 
 
 		<!-- JSR 303 with Hibernate Validator -->
@@ -92,7 +115,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
-		</dependency>			
+		</dependency>
 
 		<!-- configuracao jpa e driver -->
 		<dependency>
@@ -121,13 +144,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.15</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
-		</dependency>		
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
 		<dependency>
@@ -142,10 +165,10 @@
 			<artifactId>logback-core</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-		
-		
-		
+
 	</dependencies>
+
+	
 
 
 </project>
