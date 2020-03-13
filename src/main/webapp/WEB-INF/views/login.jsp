@@ -28,7 +28,7 @@ html, body, h1, h2, h3, h4, h5 {
 		style="width: 380px">
 		<div class="w3-container w3-padding-24 w3-center" style="height:180px">			
 				<i class="fa fa-user-circle" style="font-size:80px"></i>
-				<h3><b>Acesso Matriz</b></h3>		
+				<h3><b>STATUS NF-e</b></h3>		
 		</div>
 		 
 		<div class="w3-container w3-padding-large" style="height:280px">			

@@ -19,7 +19,7 @@ import br.com.atacadao.solucoesnfe.model.dao.StatusDao;
 
 @Controller
 @Transactional
-@RequestMapping("/admin/status")
+@RequestMapping("/status")
 public class StatusController {
 	
 	@Autowired
