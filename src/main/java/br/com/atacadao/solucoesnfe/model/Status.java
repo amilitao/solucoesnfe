@@ -21,12 +21,16 @@ public class Status implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_status;
-	@NotBlank(message="Este campo não pode ser vazio")
+	
+	@NotBlank(message = "Este campo não pode ser vazio")
 	private String codigo;
-	@NotBlank(message="Este campo não pode ser vazio")
+	
+	@NotBlank(message = "Este campo não pode ser vazio")
 	private String descricao;
+	
 	@Lob	
 	private String ocorrencia;
+	
 	@Lob
 	@Column(name = "procedimento_filial")
 	private String procedimentoFilial;
@@ -39,7 +43,7 @@ public class Status implements Serializable{
 	@Column(name = "procedimento_desenvolvimento_comercial")
 	private String procedimentoDesenvolvimentoComercial;
 	
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.ORDINAL)	
 	private TipoDocumento tipoDocumento;		
 	
 	

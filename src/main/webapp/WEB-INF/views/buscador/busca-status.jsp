@@ -67,7 +67,7 @@
 			<div class="w3-container w3-center w3-margin-top">
 				<h1 class="w3-jumbo">:(</h1>
 				<h5 class="w3-padding">
-					Nenhum resultado encontrado
+					Nenhum registro encontrado
 				</h5>
 			</div>
 		</c:if>

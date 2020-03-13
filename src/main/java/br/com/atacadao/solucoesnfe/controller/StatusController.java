@@ -34,6 +34,14 @@ public class StatusController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView list() {
+		
+		ModelAndView modelAndView = new ModelAndView("status/form");		
+
+		return modelAndView;
+	}
+	
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView save(@Valid Status status, BindingResult bindingResult,
