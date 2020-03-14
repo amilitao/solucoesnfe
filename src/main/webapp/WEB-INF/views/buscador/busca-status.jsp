@@ -40,14 +40,14 @@
 			</div>
 	</c:if>		
 	
-	<div class="w3-container" style="width:75%">	
+	<div class="w3-container">	
 	
 	<div class="w3-panel">
 	
 	<form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
-			<div class="w3-row w3-center">
-				<div class="w3-bar">
+			<div class="w3-row">
+				<div class="w3-bar" style="margin-left: 300px">
 					<input class="w3-input w3-border w3-bar-item"
 							type="text" name="codigo" value="${codigo}" style="width: 250px"
 							placeholder="Digite o número do status" required>

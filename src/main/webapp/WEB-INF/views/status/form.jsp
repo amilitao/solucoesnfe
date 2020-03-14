@@ -93,7 +93,7 @@
 
 			<p>
 				<button class="w3-btn w3-green">Salvar</button>
-				<a href="<c:url value="/buscador/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>
+				<a href="<c:url value="/status/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>
 			</p>
 
 		</form:form>
