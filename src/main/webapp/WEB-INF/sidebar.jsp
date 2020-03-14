@@ -16,8 +16,8 @@
 		</a>
 		
 		<sec:authorize access="hasAnyAuthority('PRODUCAO', 'DEVCOM','ADMIN')">			
-				<a href="<c:url value="/status/form" />" class="w3-bar-item w3-button w3-padding w3-hover-dark-gray"><i
-					class="fa fa-plus-square"></i> Adicionar Status</a>	
+				<a href="<c:url value="/status/" />" class="w3-bar-item w3-button w3-padding w3-hover-dark-gray"><i
+					class="fa fa-navicon"></i> Status</a>	
 		</sec:authorize>	
 		
 		<sec:authorize access="isAuthenticated()">

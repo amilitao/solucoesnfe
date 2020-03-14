@@ -26,12 +26,12 @@
 
 <jsp:body>
 
-	<div class="w3-container" style="width:75%">
+	<div class="w3-container">
 
-		<div class="w3-panel w3-bottombar w3-border-green">
-			<h5>
+		<div class="w3-panel w3-bar w3-bottombar w3-border-green">
+			<h4 class="w3-bar-item">
 				<i class="fa fa-plus-square"></i> Cadastro de Status
-			</h5>
+			</h4>
 		</div>
 		
 		<div class="w3-container">

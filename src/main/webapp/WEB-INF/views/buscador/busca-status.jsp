@@ -72,6 +72,13 @@
 			</div>
 		</c:if>
 
+		<c:if test="${not empty listaDeStatus}">				
+				<h5 class="w3-padding w3-medium">
+					${listaDeStatus.size()} registro(s) encontrado(s)
+				</h5>
+			
+		</c:if>
+
 		
 		<c:forEach var="status" items="${listaDeStatus}">
 
