@@ -64,9 +64,9 @@
 
 		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
 
-			<div class="w3-container w3-center w3-margin-top">
-				<h1 class="w3-jumbo">:(</h1>
-				<h5 class="w3-padding">
+			<div class="w3-container w3-margin-top" style="width: 400px; margin-left: 280px">
+				<h1 class="w3-jumbo w3-center">:(</h1>
+				<h5 class="w3-padding w3-center">
 					Nenhum registro encontrado
 				</h5>
 			</div>
