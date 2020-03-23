@@ -1,9 +1,10 @@
 package br.com.atacadao.solucoesnfe.conf;
 
-
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
@@ -35,7 +36,14 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		return conversionService;
 	}
 
-	
+	@Bean
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource bundle = new ReloadableResourceBundleMessageSource();
+		bundle.setBasename("/WEB-INF/messages");
+		bundle.setDefaultEncoding("UTF-8");	
+		return bundle;
+	}
+
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();

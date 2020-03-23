@@ -1,5 +1,10 @@
 package br.com.atacadao.solucoesnfe.controller;
 
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +24,7 @@ import br.com.atacadao.solucoesnfe.model.dao.StatusDao;
 
 @Controller
 @Transactional
-@RequestMapping("/admin/status")
+@RequestMapping("/status")
 public class StatusController {
 	
 	@Autowired
@@ -30,6 +35,19 @@ public class StatusController {
 	public ModelAndView form(Status status) {
 		ModelAndView modelAndView = new ModelAndView("status/form");
 		modelAndView.addObject("tiposDeDocumento", TipoDocumento.values());
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView list() {
+		
+		ModelAndView modelAndView = new ModelAndView("status/list");
+		List<Status> listaDeStatus = statusDao.list();	
+		
+		Collections.sort(listaDeStatus);
+		
+		modelAndView.addObject("listaDeStatus" , listaDeStatus);
 
 		return modelAndView;
 	}

@@ -40,14 +40,14 @@
 			</div>
 	</c:if>		
 	
-	<div class="w3-container" style="width:75%">	
+	<div class="w3-container">	
 	
 	<div class="w3-panel">
 	
 	<form action="<c:url value="/buscador/busca-status"/>"
 				class="w3-container">
-			<div class="w3-row w3-center">
-				<div class="w3-bar">
+			<div class="w3-row">
+				<div class="w3-bar" style="margin-left: 300px">
 					<input class="w3-input w3-border w3-bar-item"
 							type="text" name="codigo" value="${codigo}" style="width: 250px"
 							placeholder="Digite o número do status" required>
@@ -64,12 +64,19 @@
 
 		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
 
-			<div class="w3-container w3-center w3-margin-top">
-				<h1 class="w3-jumbo">:(</h1>
-				<h5 class="w3-padding">
-					Nenhum resultado encontrado
+			<div class="w3-container w3-margin-top" style="width: 400px; margin-left: 280px">
+				<h1 class="w3-jumbo w3-center">:(</h1>
+				<h5 class="w3-padding w3-center">
+					Nenhum registro encontrado
 				</h5>
 			</div>
+		</c:if>
+
+		<c:if test="${not empty listaDeStatus}">				
+				<h5 class="w3-padding w3-medium">
+					${listaDeStatus.size()} registro(s) encontrado(s)
+				</h5>
+			
 		</c:if>
 
 		
