@@ -11,15 +11,36 @@
 <jsp:attribute name="extraScripts">
 
 		<script>
-			CKEDITOR.replace('procFilial');
+			var textarea = document.getElementById('procFilial');
+			sceditor.create(textarea, {
+			plugins: 'undo',	
+			format: 'xhtml',
+			toolbar: 'bold,italic,underline,strike|left,center,right,justify|font,size,color,removeformat|cut,copy,paste|bulletlist,orderedlist|table|image|horizontal|rule|link|unlink|maximize|print|source',
+			locale: 'pt-BR',
+			style: 'minified/themes/content/default.min.css'
+			});
+		</script>		
+		
+		<script>
+			var textarea = document.getElementById('procProducao');	
+			sceditor.create(textarea, {
+			plugins: 'undo',	
+			format: 'xhtml',
+			toolbar: 'bold,italic,underline,strike|left,center,right,justify|font,size,color,removeformat|cut,copy,paste|bulletlist,orderedlist|table|image|horizontal|rule|link|unlink|maximize|print|source',
+			locale: 'pt-BR',
+			style: 'minified/themes/content/default.min.css'
+			});
 		</script>
 		
 		<script>
-			CKEDITOR.replace('procProducao');
-		</script>
-		
-		<script>
-			CKEDITOR.replace('procDesenvol');
+			var textarea = document.getElementById('procDesenvol');
+			sceditor.create(textarea, {
+			plugins: 'undo',	
+			format: 'xhtml',
+			toolbar: 'bold,italic,underline,strike|left,center,right,justify|font,size,color,removeformat|cut,copy,paste|bulletlist,orderedlist|table|image|horizontal|rule|link|unlink|maximize|print|source',
+			locale: 'pt-BR',
+			style: 'minified/themes/content/default.min.css'
+			});
 		</script>
 
 </jsp:attribute>
@@ -70,14 +91,14 @@
 
 			<p>
 				<label for="procedimentoFilial"><b>Procedimento Filial</b></label>
-				<form:textarea path="procedimentoFilial" rows="4" cols="30"
+				<form:textarea path="procedimentoFilial" rows="10" cols="30"
 						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procFilial"/>
-				<form:errors path="procedimentoFilial" class="w3-text-red"/>
+				<form:errors path="procedimentoFilial" class="w3-text-red" />
 			</p>
 			
 			<p>
 				<label for="procedimentoProducao"><b>Procedimento Producao</b></label>
-				<form:textarea path="procedimentoProducao" rows="4" cols="30"
+				<form:textarea path="procedimentoProducao" rows="10" cols="30"
 						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procProducao"/>
 				<form:errors path="procedimentoProducao" class="w3-text-red"/>
 			</p>
@@ -85,7 +106,7 @@
 			<sec:authorize access="hasAnyAuthority('DEVCOM', 'ADMIN')">	
 			<p>
 				<label for="procedimentoDesenvolvimentoComercial"><b>Procedimento Desenvol Comercial</b></label>
-				<form:textarea path="procedimentoDesenvolvimentoComercial" rows="4" cols="30"
+				<form:textarea path="procedimentoDesenvolvimentoComercial" rows="10" cols="30"
 						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procDesenvol"/>
 				<form:errors path="procedimentoDesenvolvimentoComercial" class="w3-text-red"/>
 			</p>

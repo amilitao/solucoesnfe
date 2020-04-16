@@ -19,9 +19,7 @@ public class BuscadorControllerTest {
 		
 		status.setId_status(1L);
 		status.setCodigo("99999");
-		status.setDescricao("Nao catalogado");
-		status.setProcedimento("Zoom in the modal with the w3-animate-zoom " + 
-				"class, Zoom in the modal with the w3-animate-zoom...)");
+		status.setDescricao("Nao catalogado");		
 		
 		Set<Status> lista = new HashSet<>();
 		

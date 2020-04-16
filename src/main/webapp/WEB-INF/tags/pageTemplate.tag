@@ -24,7 +24,11 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src="<c:url value='/resources/js/w3.js'/>"></script>
-<script src="//cdn.ckeditor.com/4.13.1/basic/ckeditor.js"></script>
+<!-- <script src="//cdn.ckeditor.com/4.13.1/basic/ckeditor.js"></script> -->
+
+<link rel="stylesheet" href="<c:url value='/resources/minified/themes/default.min.css'/>" />
+<script src="<c:url value='/resources/minified/sceditor.min.js'/>"></script>
+<script src="<c:url value='/resources/languages/pt-BR.js'/> "></script>
 
 
 
