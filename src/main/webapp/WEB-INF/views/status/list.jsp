@@ -75,7 +75,7 @@
 						<td class="w3-border">${status.descricao}</td>	
 						<td class="w3-center">
 							<div class="w3-bar">
-								 <a href="${spring:mvcUrl('BC#pesquisa').arg(0,status.codigo).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
+								 <a href="${spring:mvcUrl('SC#mostrar').arg(0,status.codigo).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
 							</div>
 						</td>					
 					</tr>

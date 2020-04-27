@@ -44,8 +44,7 @@
 	
 	<div class="w3-panel">
 	
-	<form action="<c:url value="/buscador/busca-status"/>"
-				class="w3-container">
+	<form action="<c:url value="/buscador/status"/>" class="w3-container">
 			<div class="w3-row">
 				<div class="w3-bar" style="margin-left: 300px">
 					<input class="w3-input w3-border w3-bar-item"

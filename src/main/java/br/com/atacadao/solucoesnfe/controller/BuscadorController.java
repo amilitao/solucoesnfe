@@ -31,7 +31,7 @@ public class BuscadorController {
 	}	
 	
 	
-	@RequestMapping("/busca-status") 
+	@RequestMapping("/status") 
 	@Cacheable(value = "pesquisaStatus")
 	public ModelAndView pesquisa(String codigo) {
 		

@@ -54,6 +54,18 @@ public class StatusController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/codigo/{codigo}") 
+	@Cacheable(value = "mostrarStatus")
+	public ModelAndView mostrar(@PathVariable("codigo") String codigo) {
+		
+		ModelAndView mav = new ModelAndView("buscador/busca-status");		
+						
+		mav.addObject("listaDeStatus", statusDao.listByCode(codigo));
+		mav.addObject("codigo", codigo);
+		
+		return mav;
+	}
+	
 
 	@RequestMapping(method = RequestMethod.POST)
 	@CacheEvict(cacheNames = {"listaDeStatus", "pesquisaStatus"}, allEntries = true)
