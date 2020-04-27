@@ -1,13 +1,14 @@
 package br.com.atacadao.solucoesnfe.controller;
 
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
@@ -40,6 +41,7 @@ public class StatusController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
+	@Cacheable(value = "listaDeStatus")
 	public ModelAndView list() {
 		
 		ModelAndView modelAndView = new ModelAndView("status/list");
@@ -54,6 +56,7 @@ public class StatusController {
 	
 
 	@RequestMapping(method = RequestMethod.POST)
+	@CacheEvict(cacheNames = {"listaDeStatus", "pesquisaStatus"}, allEntries = true)
 	public ModelAndView save(@Valid Status status, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 
