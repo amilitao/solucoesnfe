@@ -39,13 +39,24 @@ html, body, h1, h2, h3, h4, h5 {
 		<div class="w3-container w3-padding-large" style="height: 280px">
 			<div class="w3-section">
 				<form:form servletRelativeAction="/login">
+				
+					<c:if test="${param.error != null}">
+                             <div class="w3-panel w3-text-red">                                
+                                    <c:if test="${SPRING_SECURITY_LAST_EXCEPTION != null}">
+                                        <i class="fa fa-times-circle"></i> <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
+                                    </c:if>
+                             </div>
+                      </c:if>						
+				
+				
 					<input class="w3-input w3-border w3-margin-bottom w3-card-4"
 						type='text' name='username' placeholder=" Login">
 					<input class="w3-input w3-border w3-margin-bottom w3-card-4"
 						type='password' name='password' placeholder=" Senha" />
 					<button
 						class="w3-button w3-block w3-green w3-section w3-padding w3-card-4"
-						name="submit" type="submit">Entrar</button>
+						name="submit" type="submit">Entrar</button>			
+					
 
 				</form:form>
 			</div>
