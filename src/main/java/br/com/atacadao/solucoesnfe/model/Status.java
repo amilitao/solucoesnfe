@@ -33,7 +33,7 @@ public class Status implements Serializable, Comparable<Status> {
 	@Lob
 	private String ocorrencia;
 
-	@ElementCollection(fetch = FetchType.EAGER)
+	@ElementCollection
 	private List<Procedimento> procedimentos;
 
 	@Enumerated(EnumType.ORDINAL)

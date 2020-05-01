@@ -27,8 +27,10 @@ public class StatusDao {
 		manager.remove(status);
 	}
 	
-	public Status find(Long id) {
-		return manager.find(Status.class, id);
+	public Status find(Long id) {		
+		return manager.createQuery("select s from Status s join fetch s.procedimentos where s.id_status = :id",
+				Status.class).setParameter("id", id).getSingleResult();
+	
 	}
 	
 	public List<Status> list() {
