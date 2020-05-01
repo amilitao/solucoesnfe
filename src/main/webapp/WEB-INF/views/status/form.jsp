@@ -11,7 +11,7 @@
 <jsp:attribute name="extraScripts">
 
 		<script>
-			var textarea = document.getElementById('procFilial');
+			var textarea = document.getElementById('editor0');
 			sceditor.create(textarea, {
 			plugins: 'undo',	
 			format: 'xhtml',
@@ -19,10 +19,9 @@
 			locale: 'pt-BR',
 			style: 'minified/themes/content/default.min.css'
 			});
-		</script>		
-		
+		</script>	
 		<script>
-			var textarea = document.getElementById('procProducao');	
+			var textarea = document.getElementById('editor1');
 			sceditor.create(textarea, {
 			plugins: 'undo',	
 			format: 'xhtml',
@@ -31,9 +30,8 @@
 			style: 'minified/themes/content/default.min.css'
 			});
 		</script>
-		
 		<script>
-			var textarea = document.getElementById('procDesenvol');
+			var textarea = document.getElementById('editor2');
 			sceditor.create(textarea, {
 			plugins: 'undo',	
 			format: 'xhtml',
@@ -41,7 +39,7 @@
 			locale: 'pt-BR',
 			style: 'minified/themes/content/default.min.css'
 			});
-		</script>
+		</script>	
 
 </jsp:attribute>
 
@@ -88,30 +86,33 @@
 						class="w3-input w3-border w3-white" style="overflow-y:scroll;" />
 				<form:errors path="ocorrencia" class="w3-text-red"/>
 			</p>
-
-			<p>
-				<label for="procedimentoFilial"><b>Procedimento Filial</b></label>
-				<form:textarea path="procedimentoFilial" rows="10" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procFilial"/>
-				<form:errors path="procedimentoFilial" class="w3-text-red" />
-			</p>
+			
 			
 			<p>
-				<label for="procedimentoProducao"><b>Procedimento Producao</b></label>
-				<form:textarea path="procedimentoProducao" rows="10" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procProducao"/>
-				<form:errors path="procedimentoProducao" class="w3-text-red"/>
+				<label><b>Procedimento ${tiposDeProcedimento[0]}</b></label>
+				<form:textarea path="procedimentos[0].descricao" rows="10" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editor0"/>
+				<form:hidden path="procedimentos[0].tipo" value="${tiposDeProcedimento[0]}"/>
 			</p>
 			
-			<sec:authorize access="hasAnyAuthority('DEVCOM', 'ADMIN')">	
+			<sec:authorize access="hasAnyAuthority('ADMIN', 'DEVCOM')">	
 			<p>
-				<label for="procedimentoDesenvolvimentoComercial"><b>Procedimento Desenvol Comercial</b></label>
-				<form:textarea path="procedimentoDesenvolvimentoComercial" rows="10" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procDesenvol"/>
-				<form:errors path="procedimentoDesenvolvimentoComercial" class="w3-text-red"/>
+				<label><b>Procedimento ${tiposDeProcedimento[1]}</b></label>
+				<form:textarea path="procedimentos[1].descricao" rows="10" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editor1"/>
+				<form:hidden path="procedimentos[1].tipo" value="${tiposDeProcedimento[1]}"/>
 			</p>
 			</sec:authorize>
-
+			
+			<sec:authorize access="hasAnyAuthority('DEVCOM')">
+			<p>
+				<label><b>Procedimento ${tiposDeProcedimento[2]}</b></label>
+				<form:textarea path="procedimentos[2].descricao" rows="10" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editor2"/>
+				<form:hidden path="procedimentos[2].tipo" value="${tiposDeProcedimento[2]}"/>
+			</p>
+			</sec:authorize>
+			
 			<p>
 				<button class="w3-btn w3-green">Salvar</button>
 				<a href="<c:url value="/status/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>

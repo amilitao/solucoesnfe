@@ -42,9 +42,10 @@
 	
 	<div class="w3-container">	
 	
-	<div class="w3-panel">
 	
-	<form action="<c:url value="/buscador/status"/>" class="w3-container">
+		<div class="w3-panel">
+	
+		<form action="<c:url value="/buscador/status"/>" class="w3-container">
 			<div class="w3-row">
 				<div class="w3-bar" style="margin-left: 300px">
 					<input class="w3-input w3-border w3-bar-item"
@@ -59,7 +60,8 @@
 			</div>
 		</form>
 		
-		</div>	
+		</div>		
+	
 
 		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
 
@@ -79,75 +81,36 @@
 		</c:if>
 
 		
-		<c:forEach var="status" items="${listaDeStatus}">
+		<c:forEach items="${listaDeStatus}" var="status">
 
-			<div class="w3-container">				
+			<div class="w3-responsive" style="height:480px; overflow: auto;">
 
-				<ul class="w3-ul" >
-					<li>
-						<div class="w3-panel w3-leftbar w3-border-green w3-border w3-white">
-							<p>
-								<b>Tipo de documento:</b> ${status.tipoDocumento}
-							</p>
-						</div>
-					
-						<div class="w3-panel w3-leftbar w3-border-green w3-border w3-white">
-							<p>
-								<b>Status:</b> ${status.codigo}
-							</p>
-						</div>
+			<table id="id01" class="w3-table-all w3-striped w3-hoverable">
+				<tr class="w3-dark-gray">
+					<th class="w3-border" style="width:50px">Id</th>			
+					<th class="w3-border" style="width:100px">Código</th>
+					<th class="w3-border" style="width:150px">Tipo Documento</th>
+					<th class="w3-border">Descrição</th>		
+					<th class="w3-border" style="width:50px">Visualizar</th>				
+										
+				</tr>
+				<c:forEach items="${listaDeStatus}" var="status" varStatus="count" step="1" >
+					<tr class="item">
+						<td class="w3-border">${status.id_status}</td>
+						<td class="w3-border">${status.codigo}</td>
+						<td class="w3-border">${status.tipoDocumento}</td>
+						<td class="w3-border">${status.descricao}</td>	
+						<td class="w3-center">
+							<div class="w3-bar">
+								 <a href="${spring:mvcUrl('SC#detalhe').arg(0,status.id_status).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
+							</div>
+						</td>					
+					</tr>
+				</c:forEach>
 
-						<div class="w3-panel w3-leftbar w3-border-green w3-border w3-white">
-							<p>
-								<b>Descrição:</b> ${status.descricao}
-							</p>
-						</div>
-						
-						<div class="w3-margin-top">							
-							<label><b>Ocorrência:</b></label>							
-							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
-								<p>${status.ocorrencia}</p>
-							</div>								
-						</div>
-						
-						<div class="w3-margin-top">
-							
-							<label for="proc"><b>Procedimento Filial:</b></label>														
-							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
-								<p>${status.procedimentoFilial}</p>
-							</div>								
-						</div>
-						
-						<sec:authorize access="hasAnyAuthority('PRODUCAO', 'DEVCOM','ADMIN')">	
-						<div class="w3-margin-top">
-							
-							<label for="proc"><b>Procedimento Producao:</b></label>														
-							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
-								<p>${status.procedimentoProducao}</p>
-							</div>								
-						</div>	
-						</sec:authorize>
-						
-						<sec:authorize access="hasAnyAuthority('PRODUCAO', 'DEVCOM','ADMIN')">	
-						<div class="w3-margin-top">
-							
-							<label for="proc"><b>Procedimento Desenvol Comercial:</b></label>														
-							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
-								<p>${status.procedimentoDesenvolvimentoComercial}</p>
-							</div>								
-						</div>	
-						</sec:authorize>
-						
-						<sec:authorize access="isAuthenticated()">	
-						<p>				
-						 <a href="${spring:mvcUrl('SC#update').arg(0,status.id_status).build()}"
-									class="w3-button w3-green" title="editar">Editar</a>
-						</p>
-						</sec:authorize>
-					
-					</li>
-				</ul>
-			</div>			
+			</table>
+
+		</div>	
 			
 		</c:forEach>
 	

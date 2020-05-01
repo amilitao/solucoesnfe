@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.atacadao.solucoesnfe.model.Status;
 import br.com.atacadao.solucoesnfe.model.TipoDocumento;
+import br.com.atacadao.solucoesnfe.model.TipoProcedimento;
 import br.com.atacadao.solucoesnfe.model.dao.StatusDao;
 
 
@@ -35,8 +36,10 @@ public class StatusController {
 	@RequestMapping("/form")
 	public ModelAndView form(Status status) {
 		ModelAndView modelAndView = new ModelAndView("status/form");
+						
 		modelAndView.addObject("tiposDeDocumento", TipoDocumento.values());
-
+		modelAndView.addObject("tiposDeProcedimento", TipoProcedimento.values());
+		
 		return modelAndView;
 	}
 	
@@ -54,21 +57,20 @@ public class StatusController {
 		return modelAndView;
 	}
 	
-	@RequestMapping("/codigo/{codigo}") 
-	@Cacheable(value = "mostrarStatus")
-	public ModelAndView mostrar(@PathVariable("codigo") String codigo) {
+	@RequestMapping("/id/{id}") 
+	@Cacheable(value = "detalheStatus")
+	public ModelAndView detalhe(@PathVariable("id") Long id) {
 		
-		ModelAndView mav = new ModelAndView("buscador/busca-status");		
+		ModelAndView mav = new ModelAndView("status/detalhe");		
 						
-		mav.addObject("listaDeStatus", statusDao.listByCode(codigo));
-		mav.addObject("codigo", codigo);
-		
+		mav.addObject("status", statusDao.find(id));
+			
 		return mav;
 	}
 	
 
 	@RequestMapping(method = RequestMethod.POST)
-	@CacheEvict(cacheNames = {"listaDeStatus", "pesquisaStatus", "mostrarStatus"}, allEntries = true)
+	@CacheEvict(cacheNames = {"listaDeStatus", "pesquisaStatus", "detalheStatus"}, allEntries = true)
 	public ModelAndView save(@Valid Status status, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 
@@ -87,16 +89,18 @@ public class StatusController {
 			+ status.getCodigo() + " atualizado com sucesso!");
 		}
 		
-		return new ModelAndView("redirect:/buscador");
+		return new ModelAndView("redirect:/status");
 	}
 	
 	@RequestMapping("/editar/{id}")
-	public ModelAndView update(@PathVariable("id") long id, RedirectAttributes redirectAttributes) {
+	public ModelAndView update(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
 
 		ModelAndView mav = new ModelAndView("status/form");
 		Status status = statusDao.find(id);
 
 		mav.addObject("status", status);
+		mav.addObject("tiposDeProcedimento", TipoProcedimento.values());
+		
 
 		redirectAttributes.addFlashAttribute("sucesso", "Status atualizado com sucesso");
 

@@ -26,16 +26,9 @@
 			
 </jsp:attribute>
 
-<jsp:body>
+<jsp:body>	
 	
-	<c:if test="${not empty falha}">
-			<div id="mensagem" title="Mensagem" >
-				<p>
-					<i class="fa fa-exclamation-triangle w3-text-red"></i> ${falha}
-				</p>
-			</div>
-		</c:if>
-		<c:if test="${not empty sucesso}">
+	<c:if test="${not empty sucesso}">
 			<div id="mensagem" title="Mensagem">
 				<p>
 					<i class="fa fa-check-circle w3-text-green"></i> ${sucesso}
@@ -64,6 +57,7 @@
 				<tr class="w3-dark-gray">
 					<th class="w3-border" style="width:50px">Id</th>			
 					<th class="w3-border" style="width:100px">Código</th>
+					<th class="w3-border" style="width:150px">Tipo Documento</th>
 					<th class="w3-border">Descrição</th>		
 					<th class="w3-border" style="width:50px">Visualizar</th>				
 										
@@ -72,10 +66,11 @@
 					<tr class="item">
 						<td class="w3-border">${status.id_status}</td>
 						<td class="w3-border">${status.codigo}</td>
+						<td class="w3-border">${status.tipoDocumento}</td>
 						<td class="w3-border">${status.descricao}</td>	
 						<td class="w3-center">
 							<div class="w3-bar">
-								 <a href="${spring:mvcUrl('SC#mostrar').arg(0,status.codigo).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
+								 <a href="${spring:mvcUrl('SC#detalhe').arg(0,status.id_status).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
 							</div>
 						</td>					
 					</tr>

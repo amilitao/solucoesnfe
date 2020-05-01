@@ -7,7 +7,8 @@
 		style="z-index: 4">
 		<div class="w3-bar-item w3-green"><i
 			class="fa fa-file-excel-o"></i> Status NF-e
-		</div>	
+		</div>			
+		
 		
 		<sec:authorize access="!isAuthenticated()">
 			<a href="<c:url value="/buscador/acesso-restrito"/>" 
