@@ -28,7 +28,7 @@ public class StatusDao {
 	}
 	
 	public Status find(Long id) {		
-		return manager.createQuery("select s from Status s join fetch s.procedimentos where s.id_status = :id",
+		return manager.createQuery("select s from Status s join fetch s.procedimentos where s.id = :id",
 				Status.class).setParameter("id", id).getSingleResult();
 	
 	}

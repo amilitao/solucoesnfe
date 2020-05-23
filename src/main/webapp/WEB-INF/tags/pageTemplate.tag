@@ -34,6 +34,7 @@
 
 
 <style>
+
 html, body, h1, h2, h3, h4, h5 {
 	font-family: 'Cairo', sans-serif;
 }
@@ -42,14 +43,17 @@ html, body, h1, h2, h3, h4, h5 {
 </head>
 
 <body class="w3-light-gray">
+
 	<%@include file="/WEB-INF/header.jsp"%>		
 	<%@include file="/WEB-INF/sidebar.jsp"%>
-	<div class="w3-main" style="margin-left: 300px; margin-top: 43px;">
+	<div class="w3-main" style="margin-left: 300px; margin-top: 43px; padding-bottom: 30px">
 		<jsp:doBody />
 	</div>
 	<%@include file="/WEB-INF/footer.jsp"%>	
 	
-	<jsp:invoke fragment="extraScripts"/>
+	<jsp:invoke fragment="extraScripts"/>	
+
+
 </body>
 
 </html>

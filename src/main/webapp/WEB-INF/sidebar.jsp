@@ -28,11 +28,8 @@
 		</a>
 		</sec:authorize>
 			
-	</div>
+	</div>	
 	
-
-		
-
+	
 </nav>
-
 

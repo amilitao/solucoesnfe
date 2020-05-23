@@ -11,7 +11,7 @@
 <jsp:attribute name="extraScripts">
 
 		<script>
-			var textarea = document.getElementById('editor0');
+			var textarea = document.getElementById('editorFilial');
 			sceditor.create(textarea, {
 			plugins: 'undo',	
 			format: 'xhtml',
@@ -21,7 +21,7 @@
 			});
 		</script>	
 		<script>
-			var textarea = document.getElementById('editor1');
+			var textarea = document.getElementById('editorProducao');
 			sceditor.create(textarea, {
 			plugins: 'undo',	
 			format: 'xhtml',
@@ -31,7 +31,7 @@
 			});
 		</script>
 		<script>
-			var textarea = document.getElementById('editor2');
+			var textarea = document.getElementById('editorDesenvol');
 			sceditor.create(textarea, {
 			plugins: 'undo',	
 			format: 'xhtml',
@@ -58,7 +58,7 @@
 		<form:form action="${spring:mvcUrl('SC#save').build()}" method="post"
 				commandName="status">
 
-			<form:hidden path="id_status" />
+			<form:hidden path="id" />
 
 			<p>
 				<label for="tipoDocumento"><b>Tipo do documento</b></label>
@@ -91,7 +91,7 @@
 			<p>
 				<label><b>Procedimento ${tiposDeProcedimento[0]}</b></label>
 				<form:textarea path="procedimentos[0].descricao" rows="10" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editor0"/>
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editorFilial"/>
 				<form:hidden path="procedimentos[0].tipo" value="${tiposDeProcedimento[0]}"/>
 			</p>
 			
@@ -99,7 +99,7 @@
 			<p>
 				<label><b>Procedimento ${tiposDeProcedimento[1]}</b></label>
 				<form:textarea path="procedimentos[1].descricao" rows="10" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editor1"/>
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editorProducao"/>
 				<form:hidden path="procedimentos[1].tipo" value="${tiposDeProcedimento[1]}"/>
 			</p>
 			</sec:authorize>
@@ -108,7 +108,7 @@
 			<p>
 				<label><b>Procedimento ${tiposDeProcedimento[2]}</b></label>
 				<form:textarea path="procedimentos[2].descricao" rows="10" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editor2"/>
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editorDesenvol"/>
 				<form:hidden path="procedimentos[2].tipo" value="${tiposDeProcedimento[2]}"/>
 			</p>
 			</sec:authorize>

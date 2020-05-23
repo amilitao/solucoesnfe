@@ -47,9 +47,9 @@
 	
 		<form action="<c:url value="/buscador/status"/>" class="w3-container">
 			<div class="w3-row">
-				<div class="w3-bar" style="margin-left: 300px">
+				<div class="w3-bar" style="margin-left: 15%">
 					<input class="w3-input w3-border w3-bar-item"
-							type="text" name="codigo" value="${codigo}" style="width: 250px"
+							type="text" name="codigo" value="${codigo}" style="width: 300px"
 							placeholder="Digite o número do status" required>
 
 					<button class="w3-button w3-green w3-bar-item w3-margin-left w3-card-4">
@@ -96,13 +96,13 @@
 				</tr>
 				<c:forEach items="${listaDeStatus}" var="status" varStatus="count" step="1" >
 					<tr class="item">
-						<td class="w3-border">${status.id_status}</td>
+						<td class="w3-border">${status.id}</td>
 						<td class="w3-border">${status.codigo}</td>
 						<td class="w3-border">${status.tipoDocumento}</td>
 						<td class="w3-border">${status.descricao}</td>	
 						<td class="w3-center">
 							<div class="w3-bar">
-								 <a href="${spring:mvcUrl('SC#detalhe').arg(0,status.id_status).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
+								 <a href="${spring:mvcUrl('SC#detalhe').arg(0,status.id).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
 							</div>
 						</td>					
 					</tr>

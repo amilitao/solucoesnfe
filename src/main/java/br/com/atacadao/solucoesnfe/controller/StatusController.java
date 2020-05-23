@@ -78,13 +78,16 @@ public class StatusController {
 			return form(status);
 		}
 
-		if (status.getId_status() == null) {
+		if (status.getId() == null) {
+			
 			statusDao.save(status);
 			redirectAttributes.addFlashAttribute("sucesso", "Status código " 
 			+ status.getCodigo() + " cadastrado com sucesso!");
+			
 		} else {
 			
 			statusDao.update(status);
+			
 			redirectAttributes.addFlashAttribute("sucesso", "Status código " 
 			+ status.getCodigo() + " atualizado com sucesso!");
 		}

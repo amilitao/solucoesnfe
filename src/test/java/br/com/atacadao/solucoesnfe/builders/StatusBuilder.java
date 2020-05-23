@@ -3,52 +3,55 @@ package br.com.atacadao.solucoesnfe.builders;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.atacadao.solucoesnfe.model.Procedimento;
 import br.com.atacadao.solucoesnfe.model.Status;
+import br.com.atacadao.solucoesnfe.model.TipoDocumento;
 
 public class StatusBuilder {
-	
-	 private List<Status> listaDeStatus = new ArrayList<>();
 
-	    private StatusBuilder(Status status) {
-	        listaDeStatus.add(status);
-	    }
+	private List<Status> listaDeStatus = new ArrayList<>();
 
-		/*
-		 * public static StatusBuilder newStatus(TipoPreco tipoPreco, BigDecimal valor)
-		 * { Produto livro = create("Livro 1", tipoPreco, valor); return new
-		 * ProdutoBuilder(livro); }
-		 */
-		/*
-		 * public static StatusBuilder newStatus() { Status status = create( "Livro 1",
-		 * TipoPreco.COMBO, BigDecimal.TEN); return new ProdutoBuilder(livro); }
-		 */
+	private StatusBuilder(Status status) {
+		listaDeStatus.add(status);
+	}
 
-		/*
-		 * private static Status create(String titulo, TipoPreco tipoPreco, BigDecimal
-		 * valor) {
-		 * 
-		 * Produto livro = new Produto(); livro.setTitulo(titulo);
-		 * livro.setDataLancamento(Calendar.getInstance()); livro.setPaginas(150);
-		 * livro.setDescricao("Ótimo livro sobre testes");
-		 * 
-		 * return livro; }
-		 */
+	public static StatusBuilder newStatus() {
 
-		/*
-		 * public StatusBuilder mais(int quantidade) {
-		 * 
-		 * Status base = listaDeStatus.get(0);
-		 * 
-		 * for (int i = 0; i < quantidade; i++) { listaDeStatus.add(create( "Livro " +
-		 * i, preco.getTipoPreco(), preco.getValor())); } return this; }
-		 */
+		Status status = create("135", "descricao teste", "ocorrencia teste", new ArrayList<Procedimento>(),
+				TipoDocumento.NFE);
+		return new StatusBuilder(status);
+	}
 
-	    public Status buildOne() {
-	        return listaDeStatus.get(0);
-	    }
+	private static Status create(String codigo, String descricao, String ocorrencia, List<Procedimento> procedimentos,
+			TipoDocumento tipoDocumento) {
 
-	    public List<Status> buildAll() {
-	        return listaDeStatus;
-	    }
+		Status status = new Status();
+		status.setCodigo(codigo);
+		status.setDescricao(descricao);
+		status.setOcorrencia(ocorrencia);
+		status.setProcedimentos(procedimentos);
+		status.setTipoDocumento(tipoDocumento);
+
+		return status;
+	}
+
+	public StatusBuilder mais(int quantidade) {
+
+		Status base = listaDeStatus.get(0);
+
+		for (int i = 0; i < quantidade; i++) {
+			listaDeStatus.add(create("135", "descricao teste", "ocorrencia teste", new ArrayList<Procedimento>(),
+					TipoDocumento.NFE));
+		}
+		return this;
+	}
+
+	public Status buildOne() {
+		return listaDeStatus.get(0);
+	}
+
+	public List<Status> buildAll() {
+		return listaDeStatus;
+	}
 
 }
