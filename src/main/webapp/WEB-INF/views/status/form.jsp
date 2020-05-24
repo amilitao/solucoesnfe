@@ -8,18 +8,18 @@
 
 <customTags:pageTemplate title="cadastro de status">
 
-<jsp:attribute name="extraScripts">
+<jsp:attribute name="extraScripts">	
 
+		<script>			
+			CKEDITOR.replace('procFilial');			    
+		</script>	
+			
 		<script>
-			CKEDITOR.replace('procFilial');
+			CKEDITOR.replace('procProducao');		
 		</script>
 		
 		<script>
-			CKEDITOR.replace('procProducao');
-		</script>
-		
-		<script>
-			CKEDITOR.replace('procDesenvol');
+			CKEDITOR.replace('procDesenvol');		
 		</script>
 
 </jsp:attribute>
