@@ -10,17 +10,36 @@
 
 <jsp:attribute name="extraScripts">	
 
-		<script>			
-			CKEDITOR.replace('procFilial');			    
+<script>
+			var textarea = document.getElementById('editorFilial');
+			sceditor.create(textarea, {
+			plugins: 'undo',	
+			format: 'xhtml',
+			toolbar: 'bold,italic,underline,strike|left,center,right,justify|font,size,color,removeformat|cut,copy,paste|bulletlist,orderedlist|table|image|horizontal|rule|link|unlink|maximize|print|source',
+			locale: 'pt-BR',
+			style: 'minified/themes/content/default.min.css'
+			});
 		</script>	
-			
 		<script>
-			CKEDITOR.replace('procProducao');		
+			var textarea = document.getElementById('editorProducao');
+			sceditor.create(textarea, {
+			plugins: 'undo',	
+			format: 'xhtml',
+			toolbar: 'bold,italic,underline,strike|left,center,right,justify|font,size,color,removeformat|cut,copy,paste|bulletlist,orderedlist|table|image|horizontal|rule|link|unlink|maximize|print|source',
+			locale: 'pt-BR',
+			style: 'minified/themes/content/default.min.css'
+			});
 		</script>
-		
 		<script>
-			CKEDITOR.replace('procDesenvol');		
-		</script>
+			var textarea = document.getElementById('editorDesenvol');
+			sceditor.create(textarea, {
+			plugins: 'undo',	
+			format: 'xhtml',
+			toolbar: 'bold,italic,underline,strike|left,center,right,justify|font,size,color,removeformat|cut,copy,paste|bulletlist,orderedlist|table|image|horizontal|rule|link|unlink|maximize|print|source',
+			locale: 'pt-BR',
+			style: 'minified/themes/content/default.min.css'
+			});
+		</script>	
 
 </jsp:attribute>
 
@@ -39,7 +58,7 @@
 		<form:form action="${spring:mvcUrl('SC#save').build()}" method="post"
 				commandName="status">
 
-			<form:hidden path="id_status" />
+			<form:hidden path="id" />
 
 			<p>
 				<label for="tipoDocumento"><b>Tipo do documento</b></label>
@@ -67,30 +86,33 @@
 						class="w3-input w3-border w3-white" style="overflow-y:scroll;" />
 				<form:errors path="ocorrencia" class="w3-text-red"/>
 			</p>
-
-			<p>
-				<label for="procedimentoFilial"><b>Procedimento Filial</b></label>
-				<form:textarea path="procedimentoFilial" rows="4" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procFilial"/>
-				<form:errors path="procedimentoFilial" class="w3-text-red"/>
-			</p>
+			
 			
 			<p>
-				<label for="procedimentoProducao"><b>Procedimento Producao</b></label>
-				<form:textarea path="procedimentoProducao" rows="4" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procProducao"/>
-				<form:errors path="procedimentoProducao" class="w3-text-red"/>
+				<label><b>Procedimento ${tiposDeProcedimento[0]}</b></label>
+				<form:textarea path="procedimentos[0].descricao" rows="10" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editorFilial"/>
+				<form:hidden path="procedimentos[0].tipo" value="${tiposDeProcedimento[0]}"/>
 			</p>
 			
-			<sec:authorize access="hasAnyAuthority('DEVCOM', 'ADMIN')">	
+			<sec:authorize access="hasAnyAuthority('ADMIN', 'DEVCOM')">	
 			<p>
-				<label for="procedimentoDesenvolvimentoComercial"><b>Procedimento Desenvol Comercial</b></label>
-				<form:textarea path="procedimentoDesenvolvimentoComercial" rows="4" cols="30"
-						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="procDesenvol"/>
-				<form:errors path="procedimentoDesenvolvimentoComercial" class="w3-text-red"/>
+				<label><b>Procedimento ${tiposDeProcedimento[1]}</b></label>
+				<form:textarea path="procedimentos[1].descricao" rows="10" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editorProducao"/>
+				<form:hidden path="procedimentos[1].tipo" value="${tiposDeProcedimento[1]}"/>
 			</p>
 			</sec:authorize>
-
+			
+			<sec:authorize access="hasAnyAuthority('DEVCOM')">
+			<p>
+				<label><b>Procedimento ${tiposDeProcedimento[2]}</b></label>
+				<form:textarea path="procedimentos[2].descricao" rows="10" cols="30"
+						class="w3-input w3-border w3-white" style="overflow-y:scroll;" id="editorDesenvol"/>
+				<form:hidden path="procedimentos[2].tipo" value="${tiposDeProcedimento[2]}"/>
+			</p>
+			</sec:authorize>
+			
 			<p>
 				<button class="w3-btn w3-green">Salvar</button>
 				<a href="<c:url value="/status/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>

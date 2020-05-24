@@ -2,6 +2,7 @@ package br.com.atacadao.solucoesnfe.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,7 +31,8 @@ public class BuscadorController {
 	}	
 	
 	
-	@RequestMapping("/busca-status") 
+	@RequestMapping("/status") 
+	@Cacheable(value = "pesquisaStatus")
 	public ModelAndView pesquisa(String codigo) {
 		
 		ModelAndView mav = new ModelAndView("buscador/busca-status");		

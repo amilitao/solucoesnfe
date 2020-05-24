@@ -17,7 +17,7 @@ public class BuscadorControllerTest {
 		
 		Status procurado = new Status();
 		
-		status.setId_status(1L);
+		status.setId(1L);
 		status.setCodigo("99999");
 		status.setDescricao("Nao catalogado");
 		

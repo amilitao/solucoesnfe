@@ -1,6 +1,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+
 <nav class="w3-sidebar w3-collapse w3-border-right"
 	style="z-index: 3; width: 300px;" id="mySidebar">
 	<br>
@@ -27,5 +28,8 @@
 		</a>
 		</sec:authorize>
 			
-	</div>
+	</div>	
+	
+	
 </nav>
+
