@@ -47,7 +47,7 @@
 	
 		<form action="<c:url value="/buscador/status"/>" class="w3-container">
 			<div class="w3-row">
-				<div class="w3-bar" style="margin-left: 15%">
+				<div class="w3-bar" style="margin-left: 15%; margin-top: 5%">
 					<input class="w3-input w3-border w3-bar-item"
 							type="text" name="codigo" value="${codigo}" style="width: 300px"
 							placeholder="Digite o número do status" required>
