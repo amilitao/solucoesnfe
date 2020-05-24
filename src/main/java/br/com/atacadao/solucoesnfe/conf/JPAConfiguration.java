@@ -44,7 +44,7 @@ public class JPAConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");		
-		dataSource.setUrl("jdbc:mysql://localhost:3308/db_solucoesnfe");
+		dataSource.setUrl("jdbc:mysql://localhost:3308/db_solucoesnfe_v2");
 		
 		dataSource.setUsername("root");
 		dataSource.setPassword("");			
