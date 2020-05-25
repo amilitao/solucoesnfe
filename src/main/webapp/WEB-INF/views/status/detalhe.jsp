@@ -43,17 +43,8 @@
 							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
 								<p>${status.ocorrencia}</p>
 							</div>								
-						</div>
-								
-						<sec:authorize access="hasAnyAuthority('ADMIN', 'DEVCOM')">		
-						<div class="w3-margin-top">
-							
-							<label><b>Procedimento ${status.procedimentos[1].tipo}:</b></label>														
-							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
-								<p>${status.procedimentos[1].descricao}</p>
-							</div>								
-						</div>	
-						</sec:authorize>					
+						</div>							
+											
 						
 						<div class="w3-margin-top">
 							
@@ -63,12 +54,21 @@
 							</div>								
 						</div>
 						
-												
-						
-						<sec:authorize access="hasAnyAuthority('DEVCOM')">
+						<sec:authorize access="hasAnyAuthority('PRODUCAO', 'DEVCOM', 'ADMIN')">		
 						<div class="w3-margin-top">
 							
-							<label for="proc"><b>PROCEDIMENTO ${status.procedimentos[2].tipo}:</b></label>														
+							<label><b>Procedimento ${status.procedimentos[1].tipo}:</b></label>														
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
+								<p>${status.procedimentos[1].descricao}</p>
+							</div>								
+						</div>	
+						</sec:authorize>
+												
+						
+						<sec:authorize access="hasAnyAuthority('DEVCOM', 'ADMIN')">
+						<div class="w3-margin-top">
+							
+							<label><b>Procedimento ${status.procedimentos[2].tipo}:</b></label>														
 							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
 								<p>${status.procedimentos[2].descricao}</p>
 							</div>								

@@ -95,7 +95,7 @@
 				<form:hidden path="procedimentos[0].tipo" value="${tiposDeProcedimento[0]}"/>
 			</p>
 			
-			<sec:authorize access="hasAnyAuthority('ADMIN', 'DEVCOM')">	
+			<sec:authorize access="hasAnyAuthority('PRODUCAO', 'DEVCOM', 'ADMIN')">	
 			<p>
 				<label><b>Procedimento ${tiposDeProcedimento[1]}</b></label>
 				<form:textarea path="procedimentos[1].descricao" rows="10" cols="30"
@@ -104,7 +104,7 @@
 			</p>
 			</sec:authorize>
 			
-			<sec:authorize access="hasAnyAuthority('DEVCOM')">
+			<sec:authorize access="hasAnyAuthority('DEVCOM', 'ADMIN')">
 			<p>
 				<label><b>Procedimento ${tiposDeProcedimento[2]}</b></label>
 				<form:textarea path="procedimentos[2].descricao" rows="10" cols="30"

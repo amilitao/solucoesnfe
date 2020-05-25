@@ -47,9 +47,9 @@
 	
 		<form action="<c:url value="/buscador/status"/>" class="w3-container">
 			<div class="w3-row">
-				<div class="w3-bar" style="margin-left: 15%; margin-top: 5%">
+				<div class="w3-bar" style="margin-left: 20%; margin-top: 5%">
 					<input class="w3-input w3-border w3-bar-item"
-							type="text" name="codigo" value="${codigo}" style="width: 300px"
+							type="text" name="codigo" value="${codigo}" style="width: 350px"
 							placeholder="Digite o número do status" required>
 
 					<button class="w3-button w3-green w3-bar-item w3-margin-left w3-card-4">
@@ -83,7 +83,7 @@
 		
 		<c:forEach items="${listaDeStatus}" var="status">
 
-			<div class="w3-responsive" style="height:480px; overflow: auto;">
+			<div class="w3-responsive" style="overflow: auto;">
 
 			<table id="id01" class="w3-table-all w3-striped w3-hoverable">
 				<tr class="w3-dark-gray">
