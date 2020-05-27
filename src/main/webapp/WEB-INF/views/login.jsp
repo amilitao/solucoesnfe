@@ -50,7 +50,7 @@ html, body, h1, h2, h3, h4, h5 {
 				
 				
 					<input class="w3-input w3-border w3-margin-bottom w3-card-4"
-						type='text' name='username' placeholder=" Login">
+						type='text' name='username' placeholder=" Usuario">
 					<input class="w3-input w3-border w3-margin-bottom w3-card-4"
 						type='password' name='password' placeholder=" Senha" />
 					<button
