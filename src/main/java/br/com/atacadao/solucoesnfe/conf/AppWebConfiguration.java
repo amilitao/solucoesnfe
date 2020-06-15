@@ -39,6 +39,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
+	
 
 	@Bean
 	public FormattingConversionService mvcConversionService() {
