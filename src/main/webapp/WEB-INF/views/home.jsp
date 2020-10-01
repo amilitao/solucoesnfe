@@ -40,12 +40,11 @@
 			</div>
 	</c:if>		
 	
-	<div class="w3-container">	
-	
+	<div class="w3-container" >		
 	
 		<div class="w3-panel">
 	
-		<form action="<c:url value="/buscador/status"/>" class="w3-container">
+		<form action="<c:url value="/pesquisa"/>" class="w3-container">
 			<div class="w3-row">
 				<div class="w3-bar" style="margin-left: 20%; margin-top: 5%">
 					<input class="w3-input w3-border w3-bar-item"
@@ -116,6 +115,9 @@
 	
 	</div>
 
+<footer class="w3-container w3-margin w3-center w3-opacity w3-display-bottommiddle" >	
+		@Produção / Atacadão S.A
+</footer>
 
 </jsp:body>
 

@@ -55,7 +55,8 @@ public class StatusController {
 		modelAndView.addObject("listaDeStatus" , listaDeStatus);
 
 		return modelAndView;
-	}
+	}	
+	
 	
 	@RequestMapping("/id/{id}") 
 	@Cacheable(value = "detalheStatus")

@@ -58,9 +58,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 	<div class="w3-main" style="margin-left: 300px; margin-top: 43px">
 		<jsp:doBody />
-	</div>
-
-	<%@include file="/WEB-INF/footer.jsp"%>
+	</div>	
 
 	<jsp:invoke fragment="extraScripts" />
 

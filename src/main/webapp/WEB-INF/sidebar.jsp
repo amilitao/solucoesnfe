@@ -11,7 +11,7 @@
 	<div class="w3-bar-block">
 
 
-		<a href="<c:url value="/buscador/" />"
+		<a href="<c:url value="/" />"
 			class="w3-bar-item w3-button w3-padding w3-hover-dark-gray w3-green"> 
 			<i class="fa fa-search"></i> Pesquisa de status
 		</a>
@@ -22,7 +22,7 @@
 		</sec:authorize>	
 		
 		<sec:authorize access="isAuthenticated()">
-		<a href="<c:url value="/logout" />"
+		<a href="<c:url value="/login?logout" />"
 			class="w3-bar-item w3-button w3-padding w3-hover-dark-gray">
 			<i class="fa fa-sign-out"></i> Sair
 		</a>

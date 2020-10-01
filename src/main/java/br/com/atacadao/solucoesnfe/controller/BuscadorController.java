@@ -17,12 +17,7 @@ public class BuscadorController {
 	@Autowired
 	private StatusDao statusDao;
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView busca() {		
-		ModelAndView mav = new ModelAndView("buscador/busca-status");		
-		return mav;
 	
-	}	
 	
 	@RequestMapping("/acesso-restrito")
 	public ModelAndView acessoRestrito() {		

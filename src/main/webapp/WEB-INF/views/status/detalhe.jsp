@@ -20,22 +20,25 @@
 
 				<ul class="w3-ul" >
 					<li>
-						<div class="w3-panel w3-leftbar w3-border-green w3-border w3-white">
-							<p>
-								<b>Tipo de documento:</b> ${status.tipoDocumento}
-							</p>
-						</div>
-					
-						<div class="w3-panel w3-leftbar w3-border-green w3-border w3-white">
-							<p>
-								<b>Status:</b> ${status.codigo}
-							</p>
-						</div>
-
-						<div class="w3-panel w3-leftbar w3-border-green w3-border w3-white">
-							<p>
-								<b>Descrição:</b> ${status.descricao}
-							</p>
+						<div  class="w3-margin-top">
+							<label><b>Tipo de documento::</b></label>							
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
+								<p>${status.tipoDocumento}</p>
+							</div>		
+						</div>					
+						
+						<div class="w3-margin-top">							
+							<label><b>Status:</b></label>							
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
+								<p>${status.codigo}</p>
+							</div>								
+						</div>					
+						
+						<div class="w3-margin-top">							
+							<label><b>Descrição:</b></label>							
+							<div class="w3-container w3-leftbar w3-border-green w3-border w3-white">
+								<p>${status.descricao}</p>
+							</div>								
 						</div>
 						
 						<div class="w3-margin-top">							
