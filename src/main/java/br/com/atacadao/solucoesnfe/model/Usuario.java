@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,23 +15,20 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 public class Usuario implements UserDetails{	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@NotBlank(message="Este campo não pode ser vazio")
 	private String login;
 
-	private String password;
-	@NotBlank(message="Este campo não pode ser vazio")
+	private String password;	
+	@NotBlank(message="Este campo não pode ser vazio")	
+	private String nome;
 	
-	private String name;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	private List<Role> roles = new ArrayList<>();	
-		
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Role> roles = new ArrayList<>();			
 	
 	
 	public String getLogin() {
@@ -40,7 +37,12 @@ public class Usuario implements UserDetails{
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}	
 	public List<Role> getRoles() {
 		return roles;
 	}
@@ -49,21 +51,15 @@ public class Usuario implements UserDetails{
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}		
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	@Override
 	public String getPassword() {		
-		return password;
+		return this.password;
 	}
 	@Override
 	public String getUsername() {		
-		return login;
+		return this.login;
 	}
 	@Override
 	public boolean isAccountNonExpired() {		
@@ -85,7 +81,7 @@ public class Usuario implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
-		return roles;
+		return this.roles;
 	}
 	
 	

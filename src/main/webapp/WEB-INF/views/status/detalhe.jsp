@@ -78,13 +78,14 @@
 						</div>
 						</sec:authorize>				
 					
-						<sec:authorize access="isAuthenticated()">	
 						<p>				
-						 <a href="${spring:mvcUrl('SC#update').arg(0,status.id).build()}"
-									class="w3-button w3-green" title="editar">Editar</a>
-						 <a href="<c:url value="/status/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>
+							<sec:authorize access="isAuthenticated()">	
+								 <a href="${spring:mvcUrl('SC#update').arg(0,status.id).build()}"
+									class="w3-button w3-green" title="editar">Editar</a>						
+							</sec:authorize>
+							
+							 <a href="<c:url value="/status/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>
 						</p>
-						</sec:authorize>
 					
 					</li>
 				</ul>

@@ -22,6 +22,13 @@ public class UsuarioDAO implements UserDetailsService {
 	public void save(Usuario usuario) {
 		em.persist(usuario);
 	}
+	public void remove(Usuario usuario) {
+		em.remove(usuario);
+	}
+
+	public void update(Usuario usuario) {
+		em.merge(usuario);
+	}	
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -31,16 +38,9 @@ public class UsuarioDAO implements UserDetailsService {
 		if (users.isEmpty()) {
 			throw new UsernameNotFoundException("O usuario " + username + " não existe");
 		}
+		
 		return users.get(0);
 
-	}
-	
-	public void remove(Usuario usuario) {
-		em.remove(usuario);
-	}
-
-	public void update(Usuario usuario) {
-		em.merge(usuario);
 	}	
 	
 	public List<Usuario> listUserByLogin(String login) {
