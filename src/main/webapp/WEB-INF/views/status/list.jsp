@@ -35,9 +35,9 @@
 				</p>
 			</div>
 		</c:if>	
-	<div class="w3-container">
+	<div class="w3-container w3-margin w3-padding-16">
 
-		<div class="w3-panel w3-bar w3-bottombar w3-border-green">
+		<div class="w3-bar w3-bottombar w3-border-green">
 			<h4 class="w3-bar-item">
 				<i class="fa fa-navicon"></i> Lista de Status
 			</h4>
@@ -45,28 +45,22 @@
 				<input oninput="w3.filterHTML('#id01', '.item', this.value)"
 					class="w3-input w3-bar-item w3-right w3-border" placeholder="Pesquisar ..." style="width:30%">
 			</p>
-		</div>
-		<div class="w3-container w3-center">
-			<p>
-				<a href= "<c:url value="/status/form" />" class="w3-button w3-green">Novo status</a>
-			</p>
-		</div>
-		<div class="w3-responsive" style="overflow: auto;">
+		</div>	
+		
+		<div class="w3-responsive w3-margin-top"  style="overflow: auto;">
 
 			<table id="id01" class="w3-table-all w3-striped w3-hoverable">
-				<tr class="w3-dark-gray">
-					<th class="w3-border" style="width:50px">Id</th>			
-					<th class="w3-border" style="width:100px">Código</th>
-					<th class="w3-border" style="width:150px">Tipo Documento</th>
+				<tr class="w3-dark-gray">						
+					<th class="w3-border w3-center" style="width:150px">Código Status</th> 
+					<th class="w3-border w3-center" style="width:150px">Tipo Documento</th>
 					<th class="w3-border">Descrição</th>		
 					<th class="w3-border" style="width:50px">Visualizar</th>				
 										
 				</tr>
 				<c:forEach items="${listaDeStatus}" var="status" varStatus="count" step="1" >
-					<tr class="item">
-						<td class="w3-border">${status.id}</td>
-						<td class="w3-border">${status.codigo}</td>
-						<td class="w3-border">${status.tipoDocumento}</td>
+					<tr class="item">				
+						<td class="w3-border w3-center">${status.codigo}</td>
+						<td class="w3-border w3-center">${status.tipoDocumento}</td>
 						<td class="w3-border">${status.descricao}</td>	
 						<td class="w3-center">
 							<div class="w3-bar">
@@ -76,10 +70,9 @@
 					</tr>
 				</c:forEach>
 
-			</table>
-
-		</div>
-	</div>
+		      </table>
+			</div>
+		</div>	
 
 </jsp:body>
 

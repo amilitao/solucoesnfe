@@ -45,15 +45,15 @@
 
 <jsp:body>
 
-	<div class="w3-container">
+	<div class="w3-container w3-margin w3-padding-16">
 
-		<div class="w3-panel w3-bar w3-bottombar w3-border-green">
+		<div class="w3-bar w3-bottombar w3-border-green">
 			<h4 class="w3-bar-item">
-				<i class="fa fa-plus-square"></i> Cadastro de Status
+				<i class="fa fa-plus-square"></i> Novo Status
 			</h4>
 		</div>
 		
-		<div class="w3-container">
+		<div class="w3-responsive w3-margin-top">
 		
 		<form:form action="${spring:mvcUrl('SC#save').build()}" method="post"
 				commandName="status">
@@ -118,7 +118,7 @@
 				<a href="<c:url value="/status/"/>" class="w3-button w3-dark-grey w3-right">Voltar</a>
 			</p>
 
-		</form:form>
+		</form:form>		
 		</div>
 	</div>
 

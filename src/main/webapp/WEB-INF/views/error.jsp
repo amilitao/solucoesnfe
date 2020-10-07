@@ -8,20 +8,19 @@
 
 <customTags:pageTemplate title="Erro na transação">
 
-			
-<div class="w3-panel ">
-
-<h4><i class="fa fa-exclamation-triangle"></i> Nenhum resultado encontrado para essa pesquisa!</h4>
-
-<!-- 
-
-   Mensagem: ${exception.message}
-            <c:forEach items="${exception.stackTrace}" var="stk">
-                ${stk}
-            </c:forEach>
- -->
-
-
+<div class="w3-container">			
+	<div class="w3-panel w3-pale-yellow">
+	
+		<h5><i class="fa fa-exclamation-triangle"></i> Nenhum resultado encontrado para essa pesquisa!</h5>
+	
+	<!-- 
+	
+	   Mensagem: ${exception.message}
+	            <c:forEach items="${exception.stackTrace}" var="stk">
+	                ${stk}
+	            </c:forEach>
+	 -->
+	</div>
 </div>
 
 </customTags:pageTemplate>

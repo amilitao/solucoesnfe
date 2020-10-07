@@ -6,8 +6,6 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
-
-
 <customTags:pageTemplate title="buscador de status">
 
 <jsp:attribute name="extraScripts">
@@ -59,65 +57,9 @@
 			</div>
 		</form>
 		
-		</div>		
-	
-
-		<c:if test="${empty listaDeStatus && listaDeStatus != null}">
-
-			<div class="w3-container w3-margin-top" style="width: 400px; margin-left: 280px">
-				<h1 class="w3-jumbo w3-center">:(</h1>
-				<h5 class="w3-padding w3-center">
-					Nenhum registro encontrado
-				</h5>
-			</div>
-		</c:if>
-
-		<c:if test="${not empty listaDeStatus}">				
-				<h5 class="w3-padding w3-medium">
-					${listaDeStatus.size()} registro(s) encontrado(s)
-				</h5>
-			
-		</c:if>
-
-		
-		<c:forEach items="${listaDeStatus}" var="status">
-
-			<div class="w3-responsive" style="overflow: auto;">
-
-			<table id="id01" class="w3-table-all w3-striped w3-hoverable">
-				<tr class="w3-dark-gray">
-					<th class="w3-border" style="width:50px">Id</th>			
-					<th class="w3-border" style="width:100px">Código</th>
-					<th class="w3-border" style="width:150px">Tipo Documento</th>
-					<th class="w3-border">Descrição</th>		
-					<th class="w3-border" style="width:50px">Visualizar</th>				
-										
-				</tr>
-				<c:forEach items="${listaDeStatus}" var="status" varStatus="count" step="1" >
-					<tr class="item">
-						<td class="w3-border">${status.id}</td>
-						<td class="w3-border">${status.codigo}</td>
-						<td class="w3-border">${status.tipoDocumento}</td>
-						<td class="w3-border">${status.descricao}</td>	
-						<td class="w3-center">
-							<div class="w3-bar">
-								 <a href="${spring:mvcUrl('SC#detalhe').arg(0,status.id).build()}" class="w3-bar-item w3-button w3-tiny w3-padding-small"><i class="fa fa-search w3-hover-text-green" style="font-size: 18px"></i></a>								 
-							</div>
-						</td>					
-					</tr>
-				</c:forEach>
-
-			</table>
-
 		</div>	
-			
-		</c:forEach>
-	
+				
 	</div>
-
-<footer class="w3-container w3-margin w3-center w3-opacity w3-display-bottommiddle" >	
-		@Produção / Atacadão S.A
-</footer>
 
 </jsp:body>
 

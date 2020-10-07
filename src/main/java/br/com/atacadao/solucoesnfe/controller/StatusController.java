@@ -69,9 +69,10 @@ public class StatusController {
 		return mav;
 	}
 	
+		
 
 	@RequestMapping(method = RequestMethod.POST)
-	@CacheEvict(cacheNames = {"listaDeStatus", "pesquisaStatus", "detalheStatus"}, allEntries = true)
+	@CacheEvict(cacheNames = {"listaDeStatus", "detalheStatus"}, allEntries = true)
 	public ModelAndView save(@Valid Status status, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 
