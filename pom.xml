@@ -17,7 +17,7 @@
 		<itext.version>RELEASE</itext.version>
 
 		<springframework.version>4.3.17.RELEASE</springframework.version>
-		<springsecurity.version>4.2.0.RELEASE</springsecurity.version>
+		<springsecurity.version>5.4.2</springsecurity.version>
 		<hibernate.version>4.3.11.Final</hibernate.version>
 		<mysql.connector.version>5.1.46</mysql.connector.version>
 
